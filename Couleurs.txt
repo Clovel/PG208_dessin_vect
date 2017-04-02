@@ -1,0 +1,12 @@
+Couleurs 
+
+--Nom	R 	G 	B
+Rouge	255	0	0
+Bleu	0	0	255
+Vert	0	255	0
+Jaune
+Orange
+Violet
+Noir
+Blanc
+Gris
