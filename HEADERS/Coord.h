@@ -4,7 +4,7 @@
 #ifndef COORD_H
 #define COORD_H
 
-#include <inostream>
+#include <iostream>
 
 // Classe Coord permet de definir un point "mathemmatique"
 
@@ -12,7 +12,7 @@ class Coord
 {
 public:
 	// Con/Destructeurs
-	Coord(int const x = 0, int const y = 0);
+	Coord(int const x = 0, int const y = 0); // Valeur par defaut sur le proto pas sur le code cpp
 
 	// Afficheurs
 	void showCoord(void) const;

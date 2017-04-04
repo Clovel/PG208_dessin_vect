@@ -8,7 +8,7 @@ using namespace std;
 
 
 //Con/Destructeurs
-Coord::Coord(int const x = 0, int const y = 0): m_x(x), m_y(y)
+Coord::Coord(int const x, int const y): m_x(x), m_y(y)
 {
 	// Constructeur par defaut
 }
@@ -39,12 +39,12 @@ int Coord::getOrdonnee(void) const
 }
 
 // Mutateurs
-void Coord::getAbscisse(int const &x)
+void Coord::setAbscisse(int const &x)
 {
 	m_x = x;
 }
 
-void Coord::getOrdonnee(int const &y)
+void Coord::setOrdonnee(int const &y)
 {
 	m_y = y;
 }

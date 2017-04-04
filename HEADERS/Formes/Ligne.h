@@ -6,6 +6,7 @@
 
 #include <string>
 #include <cmath>
+#include <iostream>
 #include "../Coord.h" // Point mathématique
 
 class Ligne
@@ -23,10 +24,8 @@ public:
 		  std::string const couleur,
 		  unsigned int transparence);
 
-
-
 	// Afficheurs
-	void printInfoLigne(void) const;
+	void printInfoLigne(ostream &flux) const;
 
 	// Accesseurs
 	Coord getCoord(void) const;

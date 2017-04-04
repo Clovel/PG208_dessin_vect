@@ -21,16 +21,16 @@ Ligne::Ligne(int const x1,
 
 // Afficheurs
 
-void printInfoLigne(void) const
+void printInfoLigne(ostream &flux) const
 {
-
+	flux << getCoord()[0] << " to " << getCoord()[1];
 }
 
 // Accesseurs
 
 void getCoord(void) const
 {
-	vector<int> coord(4) = {m_x1, m_y1, m_x2, m_y2};
+	vector<Coord> cLigne() = {m_c1, m_c2};
 	return coord;
 }
 
@@ -54,4 +54,11 @@ void getLongueur(void) const
 double longueur(void) const
 {
 	return sqrt((double)pow(m_x2 - m_x1, 2) + (double)pow(m_y2 - m_y1, 2));
+}
+
+// Opérateurs
+ostream& operator<<(ostream& flux, Ligne const &l)
+{
+    c.printLinge(flux);
+    return flux;
 }
