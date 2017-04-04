@@ -26,3 +26,5 @@ Carre::Carre(Coord c1,
 
 
 }
+
+#endif // CARRE_H
