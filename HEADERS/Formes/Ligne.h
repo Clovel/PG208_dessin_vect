@@ -13,10 +13,11 @@ class Ligne
 {
 public:
 	// Con/Destructeurs
+	Ligne();
 	Ligne(Coord const c1, 
 		  Coord const c2, 
 		  std::string const couleur,
-		  unsigned int transparence);
+		  unsigned int const transparence);
 
 	// Afficheurs
 	void printInfoLigne(std::ostream &flux) const;

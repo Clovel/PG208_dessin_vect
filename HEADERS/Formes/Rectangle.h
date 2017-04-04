@@ -24,18 +24,14 @@ public :
 	//void print_info_rectangle(void) const;
 
 // Accesseurs
-	Coord getCoord1(void) const;
-	std::string getCouleur(void) const;
-	unsigned int getTransparence(void) const;
-	unsigned int getLongueur(void);
-	unsigned int getHauteur(void);
+	Coord getC1(void) const;
+	std::string getCouleur() const;
+	unsigned int getTransparence() const;
 
 // Mutateurs
 	void setC1(Coord const &c1);
 	void setCouleur(std::string const &couleur);
 	void setTransparence(unsigned int const &transparence);
-	void setLongueur(unsigned int &longueur);
-	void setHauteur(unsigned int &hauteur);
 
 // Méthodes publiques diverses
 
@@ -58,7 +54,9 @@ private :
 	//unsigned int m_thauteur;
 
 // Méthodes privées diverses
-	void Rectangle::calcul_lignes(Coord const &c1);
+	void calcul_lignes(Coord const &c1, 
+		unsigned int const &longueur, 
+		unsigned int const &hauteur);
 };
 
 // Opérateurs

@@ -9,6 +9,11 @@ using namespace std;
 
 // Con/Destructeur
 
+Ligne::Ligne(): m_couleur("UNKNOWN"), m_transparence(0)
+{
+	// Par defaut
+}
+
 Ligne::Ligne(Coord const c1, Coord const c2, 
 	string const couleur, 
 	unsigned int const transparence): 	m_c1(c1), m_c2(c2), 
