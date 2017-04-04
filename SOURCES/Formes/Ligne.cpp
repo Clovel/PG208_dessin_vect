@@ -5,60 +5,64 @@
 // Definition des méthodes relatives a 
 
 #include "../../HEADERS/Formes/Ligne.h"
+using namespace std;
 
 // Con/Destructeur
 
-Ligne::Ligne(int const x1, 
-	int const y1, 
-	int const x2, 
-	int const y2, 
+Ligne::Ligne(Coord const c1, Coord const c2, 
 	string const couleur, 
-	unsigned int const transparence): m_x1(x1), m_y1(y1), m_x2(x2), m_y2(y2),
-										m_couleur(couleur), m_transparence(transparence)
+	unsigned int const transparence): 	m_c1(c1), m_c2(c2), 
+										m_couleur(couleur), 
+										m_transparence(transparence)
 {
 
 }
 
 // Afficheurs
 
-void printInfoLigne(ostream &flux) const
+void Ligne::printInfoLigne(ostream &flux) const
 {
-	flux << getCoord()[0] << " to " << getCoord()[1];
+	flux << getCoord1() << " to " << getCoord2();
 }
 
 // Accesseurs
-
-void getCoord(void) const
+Coord Ligne::getCoord1(void) const
 {
-	vector<Coord> cLigne() = {m_c1, m_c2};
-	return coord;
+	return m_c1;
 }
 
-void getCouleur(void) const
+Coord Ligne::getCoord2(void) const
+{
+	return m_c2;
+}
+
+string Ligne::getCouleur(void) const
 {
 	return m_couleur;
 }
 
-void getTransparence(void) const
+unsigned int Ligne::getTransparence(void) const
 {
 	return m_transparence;
 }
 
-void getLongueur(void) const
+unsigned int Ligne::getLongueur(void) const
+// Calcule et retourne la longueur de la ligne
+// Si le repere de coordonnees est entier, alors le resultat est un uInt
 {
-
+	return (unsigned int)sqrt((double)pow(m_c2.getAbscisse() - m_c1.getAbscisse(), 2) 
+		+ (double)pow(m_c2.getOrdonnee() - m_c1.getOrdonnee(), 2));
 }
 
-// Méthodes pirvées diverses
+// Méthodes privées diverses
 
-double longueur(void) const
-{
-	return sqrt((double)pow(m_x2 - m_x1, 2) + (double)pow(m_y2 - m_y1, 2));
-}
+
 
 // Opérateurs
-ostream& operator<<(ostream& flux, Ligne const &l)
+ostream &operator<<(ostream &flux, Ligne const &l)
 {
-    c.printLinge(flux);
+    l.printInfoLigne(flux);
     return flux;
 }
+
+// Fonction diverses

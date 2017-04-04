@@ -13,25 +13,20 @@ class Ligne
 {
 public:
 	// Con/Destructeurs
-	/*Ligne(int const x1, 
-		int const y1, 
-		int const x2, 
-		int const y2, 
-		std::string const couleur, 
-		unsigned int const transparence);*/
 	Ligne(Coord const c1, 
 		  Coord const c2, 
 		  std::string const couleur,
 		  unsigned int transparence);
 
 	// Afficheurs
-	void printInfoLigne(ostream &flux) const;
+	void printInfoLigne(std::ostream &flux) const;
 
 	// Accesseurs
-	Coord getCoord(void) const;
+	Coord getCoord1(void) const;
+	Coord getCoord2(void) const;
 	std::string getCouleur(void) const;
 	unsigned int getTransparence(void) const;
-	double getLongueur(void) const;
+	unsigned int getLongueur(void) const;
 
 	// Mutateurs
 	void setCoord(Coord const &c1, Coord const &c2);
@@ -42,14 +37,15 @@ public:
 
 private:
 	// Attributs/Variables membres
-	Point p1, p2;
+	Coord m_c1, m_c2;
 	std::string m_couleur;
 	unsigned int m_transparence;
 
 	// Méthodes privée diverses 
-	double longueur(void) const; // Retourne la longueur de la ligne
 };
 
+// Opérateurs
+std::ostream &operator<<(std::ostream &flux, Ligne const &l);
 
 // Passage par reference (avec &) pour eviter 
 	// de recopier les variables pour rien
