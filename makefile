@@ -7,7 +7,7 @@ CFLAGS   =-O3 -march=native -mtune=native -std=c++11
 #Source directories
 SRC      =./SOURCES
 SRCFORME =./SOURCES/Formes
-SRCS     =./SOURCES/Coord.cpp ./SOURCES/Formes/Ligne.cpp ./SOURCES/Formes/Rectangle.cpp ./SOURCES/Formes/Carre.cpp
+SRCS     =./SOURCES/Coord.cpp ./SOURCES/Formes/Ligne.cpp ./SOURCES/Formes/Rectangle.cpp ./SOURCES/Formes/Carre.cpp ./SOURCES/Formes/Cercle.cpp
 
 #Header directories
 HDR      =./HEADERS
