@@ -24,7 +24,7 @@ public :
 	//void print_info_rectangle(void) const;
 
 // Accesseurs
-	Coord getCoord1(void) const;
+	Coord getC1(void) const;
 	std::string getCouleur(void) const;
 	unsigned int getTransparence(void) const;
 	unsigned int getLongueur(void);
