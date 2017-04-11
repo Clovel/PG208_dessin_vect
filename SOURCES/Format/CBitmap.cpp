@@ -56,7 +56,8 @@ bool CBitmap::LoadBMP(string name){
 
         ifstream myfile ( name.c_str(), ios::in | ios::binary );
 
-        if (myfile.is_open()){
+        if (myfile.is_open())
+        {
 
                 myfile.read((char*)(&bfType), 2);
 
@@ -105,9 +106,11 @@ bool CBitmap::LoadBMP(string name){
 
                 int lectures = 0;
 
-                for(int y=0; y<biHeight; y++){
+                for(int y=0; y<biHeight; y++)
+                {
 
-                        for(int x=0; x<biWidth; x++){
+                        for(int x=0; x<biWidth; x++)
+                        {
 
                                 lectures += 3;
 
@@ -152,7 +155,8 @@ bool CBitmap::LoadBMP(string name){
 }
 
 
-bool CBitmap::SaveBMP(string name){
+bool CBitmap::SaveBMP(string name)
+{
         cout << "Starting picture saving..." << endl;
         ofstream myfile ( name.c_str(), ios::out | ios::binary  );
         if (myfile.is_open()){
@@ -207,7 +211,8 @@ bool CBitmap::SaveBMP(string name){
 }
 
 
-void CBitmap::dump(){
+void CBitmap::dump()
+{
 
         cout << "bfType          : " << bfType << endl;
 

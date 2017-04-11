@@ -9,7 +9,14 @@
 
 #include "../../HEADERS/image/CLigne.h"
 
-CLigne::CLigne(int _taille){
+//Con/Destructeurs
+CLigne::CLigne()
+{
+
+}
+
+CLigne::CLigne(int _taille)
+{
     //cout << "Instanciation des colonnes... " << taille << endl;
     taille = _taille;
     ligne = (CPixel**)new CPixel**[taille];
@@ -17,20 +24,20 @@ CLigne::CLigne(int _taille){
         ligne[i] = new CPixel();
 }
 
-CLigne::CLigne(){
-}
-
-CLigne::~CLigne(){
+CLigne::~CLigne()
+{
     for(int i=0; i<taille; i++)
         delete ligne[i];
     delete ligne;
 }
 
-int CLigne::size(){
+int CLigne::size()
+{
     return taille;
 }
 
-CPixel* CLigne::getPixel(int position){
+CPixel* CLigne::getPixel(int position)
+{
     if( (position >= taille) ){
         cout << "CLigne::getPixel => trying to access " << position << " but the line has only " << taille << " data" << endl;
     }

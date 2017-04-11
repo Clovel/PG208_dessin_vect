@@ -9,7 +9,8 @@
 
 #include "../../HEADERS/image/CImage.h"
 
-CImage::CImage(int hauteur, int largeur){
+CImage::CImage(int hauteur, int largeur)
+{
     //cout << "Instanciation des lignes... " << taille << endl;
     taille = hauteur;
     liste = (CLigne**)new CLigne**[taille];
@@ -18,20 +19,22 @@ CImage::CImage(int hauteur, int largeur){
     }
 }
 
-CImage::~CImage(){
+CImage::~CImage()
+{
     for(int i=0; i<taille; i++)
         delete liste[i];
     delete liste;
 }
 
-int CImage::size(){
+int CImage::size()
+{
     return taille;
 }
 
-CLigne* CImage::getLigne(int position){
-    if( (position >= taille) ){
+CLigne* CImage::getLigne(int position)
+{
+    if(position >= taille)
         cout << "CImage::getLigne => trying to access " << position << " but the line has only " << taille << " data" << endl;
-    }
     return (position < taille)?liste[position]:NULL;
 }
 

@@ -10,23 +10,27 @@ using namespace std;
 
 
 int main(int argc, char * argv[]) {
-    cout << "(II) P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
-    cout << "(II) + Number of arguments = " << argc << endl;
+    cout << "INFO : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
+    cout << "INFO : Number of arguments = " << argc << endl;
 
-    cout << "(II) CBitmap object creation" << endl;
+    cout << "INFO : CBitmap object creation" << endl;
     CBitmap *image = new CBitmap();
     string filename2 = "Sortie.bmp";
 
-    cout << "(II) CImage pointer extraction" << endl;
+    cout << "INFO : CImage pointer extraction" << endl;
     CImage   *img = new CImage(200, 200);
-    for(int i=0; i<200; i++){
+
+    // Dessine une ligne diagonale de (0, 0) a (200, 200), 
+        // i.e. de en bas a gauche à en haut a droite
+    for(int i=0; i<200; i++)
+    {
         CPixel *p = img->getPixel(i, i);
         p->RGB(255,255,255);
     }
 
-    image->setImage( img );
-    cout << "(II) CBitmap image saving" << endl;
-    image->SaveBMP(filename2);
+    image->setImage(img); // Met l'image dessinée dans l'objet CBitmap
+    cout << "INFO : CBitmap image saving" << endl;
+    image->SaveBMP(filename2); // Enregistre le CBitmap
 
     return 1;
 }
