@@ -8,6 +8,8 @@
 #include <cmath>
 #include <iostream>
 #include "../Coord.h" // Point mathématique
+#include "../image/CImage.h"
+#include "../Couleur.h"
 
 class Ligne
 {
@@ -35,6 +37,8 @@ public:
 	void setTransparence(unsigned int const &transparence);
 
 	// Méthodes publiques Diverses
+	void swap(int a, int b);
+	void draw(CImage *img);
 
 private:
 	// Attributs/Variables membres

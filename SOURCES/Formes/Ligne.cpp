@@ -59,7 +59,64 @@ unsigned int Ligne::getLongueur(void) const
 		+ (double)pow(m_c2.getOrdonnee() - m_c1.getOrdonnee(), 2));
 }
 
-// Méthodes privées diverses
+// DRAW
+void swap(int a, int b)
+{
+	a=a+b;
+	b=a-b;
+	a=a-b;
+}
+
+void Ligne::draw(CImage *img)
+{
+	int i;
+	Coord c1(getCoord1()), c2(getCoord2());
+	int a1(getCoord1().getAbscisse()), a2(getCoord2().getAbscisse());
+	int o1(getCoord1().getOrdonnee()), o2(getCoord2().getOrdonnee());
+	if(a1 == a2)
+	// ligne verticale
+	{
+		if(o1 > o2)
+			swap(o1, o2);
+
+		// Verifier si ligne est dans le cadre
+
+		for (i = o1; i < o2; i++)
+		{
+			CPixel *p = img->getPixel(a1, i);
+			p->RGB(getCouleur().getRed(), getCouleur().getGreen(), getCouleur().getBlue());
+		}
+	}
+	else if(o1 == o2)
+	// ligne horizontale
+	{
+		if(a1 > a2)
+			swap(a1, a2);
+
+		// Verifier si ligne est dans le cadre
+
+		for (i = a1; i < a2; i++)
+		{
+			CPixel *p = img->getPixel(i, o1);
+			p->RGB(getCouleur().getRed(), getCouleur().getGreen(), getCouleur().getBlue());
+		}
+	}
+	else if (abs(o2 - o1) == abs(a2 - a1))
+	{
+		int distance = abs(o2 - o1);
+		// Verifier si ligne est dans le cadre
+
+		// Point de depart de la ligne
+		for (i = 0; i < distance; i++)
+		{
+			CPixel *p = img->getPixel(i, i);
+		}
+	}
+	else // cas ligne inclinee
+	{
+
+	}
+}
 
 
 
