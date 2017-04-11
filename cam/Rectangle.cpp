@@ -62,7 +62,7 @@ void Rectangle::setLongueur(unsigned int longueur)
 	m_longueur = longueur;
 }
 
-void Rectangle::setHauteur(unsigned hauteur)
+void Rectangle::setHauteur(unsigned int hauteur)
 {
 
 	m_hauteur = hauteur

@@ -16,7 +16,7 @@ public :
 //Constructeur
 	Cercle(Coord c,
 		   unsigned int rayon,
-		   Couleur const couleur, 
+		   std::string const couleur, 
 		   unsigned int const transparence);
 
 //Afficheurs
@@ -24,13 +24,13 @@ public :
 //Accesseurs
 	Coord getC(void);
 	unsigned int getRayon(void);
-	Couleur getCouleur(void);
+	std::string getCouleur(void);
 	unsigned int getTransparence(void);
 
 // Mutateurs
 	void setC(Coord const &c);
 	void setRayon(unsigned int &rayon)	
-	void setCouleur(Couleur const &couleur);
+	void setCouleur(std::string const &couleur);
 	void setTransparence(unsigned int &transparence);
 
 //Méthodes publiques diverses
@@ -38,7 +38,7 @@ public :
 private :
 // Variables membres aussi appelées attribus
 	Coord m_c;
-	Couleur m_couleur;
+	string m_couleur;
 	unsigned int m_rayon;
 	unsigned int m_transparence;	
 
