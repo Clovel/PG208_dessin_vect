@@ -18,6 +18,7 @@ using namespace std;
 
 #include "./HEADERS/Format/CBitmap.h"
 #include "./HEADERS/Formes/Ligne.h"
+#include "./HEADERS/Formes/Rectangle.h"
 
 
 int main(int argc, char * argv[]) {
@@ -45,7 +46,12 @@ int main(int argc, char * argv[]) {
     Coord c1(300, 300), c2(500, 400);
     Couleur white(255, 255, 255);
     Ligne l(c1, c2, white, 0);
+    cout << "DRAW : Drawing [l]" << endl;
     l.draw(img); // Dessine sur l'image
+
+    Rectangle rect(c1, 100, 200, white, 0);
+    cout << "DRAW : Drawing [rect]" << endl;
+    rect.draw(img);
 
     image->setImage(img); // Met l'image dessinée dans l'objet CBitmap
     cout << "INFO : CBitmap image saving" << endl;

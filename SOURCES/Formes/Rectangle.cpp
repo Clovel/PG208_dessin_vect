@@ -8,58 +8,36 @@ using namespace std;
 Rectangle::Rectangle(Coord const c1, 
 	unsigned int const longueur, 
 	unsigned int const hauteur,  
-	string const couleur, 
+	Couleur const couleur, 
 	unsigned int const transparence)
 {
-	setC1(c1);
+	setCoord1(c1);
 	setCouleur(couleur);
 	setTransparence(transparence);
-	calcul_lignes(m_c1, longueur, hauteur);
+	calcul_lignes(longueur, hauteur);
 }
 
 // Afficheurs
 
 // Accesseurs
 
-Coord Rectangle::getC1() const
-{
-	return m_c1;
-}
-
-string Rectangle::getCouleur() const
-{
-	return m_couleur;
-}
-
-unsigned int Rectangle::getTransparence() const
-{
-	return m_transparence;
-}
-
 // Mutateurs
 
-void Rectangle::setC1(Coord const &c1)
+// Draw
+void Rectangle::draw(CImage *img)
 {
-	m_c1 = c1;
-}
-
-void Rectangle::setCouleur(string const &couleur)
-{
-	m_couleur = couleur;
-}
-
-void Rectangle::setTransparence(unsigned int const &transparence)
-{
-	m_transparence = transparence;
+	m_l1.draw(img);
+	m_l2.draw(img);
+	m_l3.draw(img);
+	m_l4.draw(img);
 }
 
 // Méthodes publiques diverses
 
 // Méthodes privées diverses
-void Rectangle::calcul_lignes(Coord const &c1, 
-	unsigned int const &longueur, 
-	unsigned int const &hauteur)
+void Rectangle::calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur)
 {
+	Coord c1 = getCoord1();
 	Coord c2(c1.getAbscisse(), c1.getOrdonnee() + hauteur);
 	Coord c3(c1.getAbscisse() + longueur, c1.getOrdonnee() + hauteur);
 	Coord c4(c1.getAbscisse() + longueur, c1.getOrdonnee());

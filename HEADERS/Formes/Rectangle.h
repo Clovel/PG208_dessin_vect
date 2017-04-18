@@ -7,56 +7,47 @@
 #include <string>
 #include <cmath>
 #include "../Others/Coord.h"
+#include "../Others/Couleur.h"
+#include "Forme.h"
 #include "Ligne.h"
 
-class Rectangle
+class Rectangle : public Forme
 {
 public :
 
-//Constructeur
+	//Constructeur
 	Rectangle(Coord c1, 
 		unsigned int longueur, 
 		unsigned int hauteur,  
-		std::string const couleur, 
+		Couleur const couleur, 
 		unsigned int const transparence);
 
-//Afficheurs
-	//void print_info_rectangle(void) const;
+	// Afficheurs
 
-// Accesseurs
-	Coord getC1(void) const;
-	std::string getCouleur() const;
-	unsigned int getTransparence() const;
+	// Accesseurs
 
-// Mutateurs
-	void setC1(Coord const &c1);
-	void setCouleur(std::string const &couleur);
-	void setTransparence(unsigned int const &transparence);
+	// Mutateurs
 
-// Méthodes publiques diverses
+	// Draw
+	void draw(CImage *img);
+
+	// Méthodes publiques diverses
 
 
 private :
 
-// le premier point est en bas à gauche, ensuite j'évolue dans le sens des aiguilles d'une montre
+	// le premier point est en bas à gauche, ensuite j'évolue dans le sens des aiguilles d'une montre
 
 
 
-// Variables membres aussi appelées attribus 	
-	Coord m_c1;
+	// Variables membres aussi appelées attribus
 	Ligne m_l1;
 	Ligne m_l2;
 	Ligne m_l3;
 	Ligne m_l4;
-	std::string m_couleur;
-	unsigned int m_transparence;
-	//unsigned int m_longueur;
-	//unsigned int m_thauteur;
 
-// Méthodes privées diverses
-	void calcul_lignes(Coord const &c1, 
-		unsigned int const &longueur, 
-		unsigned int const &hauteur);
+	// Méthodes privées diverses
+	void calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur);
 };
 
 // Opérateurs

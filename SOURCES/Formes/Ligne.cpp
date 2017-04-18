@@ -68,8 +68,7 @@ void Ligne::setCoord(Coord const &c1, Coord const &c2)
 	setCoord2(c2);
 }
 
-// DRAW
-
+// Draw
 
 void Ligne::draw(CImage *img)
 // Algorithme général optimisé de trace de segment de Bresenham

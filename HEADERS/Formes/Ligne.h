@@ -35,9 +35,10 @@ public:
 	void setCoord2(Coord const &c2);
 	void setCoord(Coord const &c1, Coord const &c2);
 
-	// Méthodes publiques Diverses
-	void swap(int a, int b);
+	// Draw
 	void draw(CImage *img);
+
+	// Méthodes publiques Diverses
 
 private:
 	// Attributs/Variables membres
