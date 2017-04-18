@@ -38,8 +38,15 @@ CLigne* CImage::getLigne(int position)
     return (position < taille)?liste[position]:NULL;
 }
 
-CPixel* CImage::getPixel(int posX, int posY){
-    CLigne* ligne =  getLigne( posY );
-    if( ligne == NULL) return NULL;
+CPixel *CImage::getPixel(int posX, int posY)
+{
+    CLigne *ligne =  getLigne(posY);
+    if(ligne == NULL) return NULL;
     return ligne->getPixel(posX);
+}
+
+void CImage::drawPixel(int const posX, int const posY, unsigned int r, unsigned int g, unsigned int b)
+{
+    CPixel *p = getPixel(posX, posY);
+    p->RGB(r, g, b);
 }

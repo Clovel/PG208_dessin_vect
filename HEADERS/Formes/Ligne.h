@@ -10,8 +10,9 @@
 #include "../Coord.h" // Point mathématique
 #include "../image/CImage.h"
 #include "../Couleur.h"
+#include "Forme.h"
 
-class Ligne
+class Ligne : public Forme
 {
 public:
 	// Con/Destructeurs

@@ -34,6 +34,8 @@ public:
     CLigne* getLigne(int position);
 
     CPixel* getPixel(int posX, int posY);
+
+    void drawPixel(int const posX, int const posY, unsigned int r, unsigned int g, unsigned int b);
 };
 
 #endif /*CIMAGE_H_*/

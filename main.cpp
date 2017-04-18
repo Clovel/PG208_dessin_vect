@@ -16,6 +16,9 @@ using namespace std;
 
 #include "./HEADERS/Format/CBitmap.h"
 
+#define WIDTH  1024
+#define HEIGHT 768
+
 
 int main(int argc, char * argv[]) {
     cout << "INFO : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
@@ -26,7 +29,9 @@ int main(int argc, char * argv[]) {
     string filename2 = "Sortie.bmp";
 
     cout << "INFO : CImage pointer extraction" << endl;
-    CImage   *img = new CImage(200, 200);
+    CImage   *img = new CImage(HEIGHT, WIDTH);
+
+
 
     // Dessine une ligne diagonale de (0, 0) a (200, 200), 
         // i.e. de en bas a gauche à en haut a droite

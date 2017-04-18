@@ -13,12 +13,12 @@
 #include <string>
 #include <cmath>
 #include <iostream>
-#include "../Coord.h" // Point mathématique
+#include "../Coord.h" 	// Point mathématique
+#include "../Couleur.h" // Couleur
 
 class Forme
 {
 public:
-
 	// Con/Destructeurs
 	Forme();
 	Forme(Coord const c1, 
@@ -31,8 +31,8 @@ public:
 	unsigned int getTransparence(void) const;
 
 	// Mutateurs
-	void setCoord(Coord const &c1, Coord const &c2);
-	void setCouleur (std::string const &couleur);
+	void setCoord(Coord const &c1);
+	void setCouleur (Couleur const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
 private:
