@@ -8,8 +8,9 @@
 #include <string>
 #include <cmath>
 #include "../Coord.h"
+#include "Forme.h"
 
-class Cercle
+class Cercle : public Forme
 {
 public :
 
