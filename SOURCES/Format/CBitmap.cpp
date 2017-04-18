@@ -157,7 +157,7 @@ bool CBitmap::LoadBMP(string name){
 
 bool CBitmap::SaveBMP(string name)
 {
-        cout << "Starting picture saving..." << endl;
+        cout << "INFO : Saving Bitmap..." << endl;
         ofstream myfile ( name.c_str(), ios::out | ios::binary  );
         if (myfile.is_open()){
                 myfile.write((char*)(&bfType), 2);
@@ -206,7 +206,7 @@ bool CBitmap::SaveBMP(string name)
                 cout << "Warning, unable to open the file : " << name << endl;
                 return false;
         }
-        cout << "Picture saving finished !" << endl;
+        cout << "INFO : Picture saved !" << endl;
         return true;
 }
 

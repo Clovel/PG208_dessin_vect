@@ -4,11 +4,11 @@
 
 // PG208 - Projet Dessin Vectoriel
 
-// Ractangle.h
-// Rectangle class header file. 
+// Rectangle_v2.h
+// Rectangle_v2 class header file. 
 
-#ifndef RECTANGLE_H
-#define RECTANGLE_H
+#ifndef RECTANGLE_V2_H
+#define RECTANGLE_V2_H
 
 #include <string>
 #include <cmath>
@@ -22,25 +22,17 @@ class Rectangle : public Forme
 public :
 
 	//Constructeur
-	Rectangle(Coord const c1, 
-		unsigned int const longueur, 
-		unsigned int const hauteur,  
+	Rectangle(Coord c1, 
+		unsigned int longueur, 
+		unsigned int hauteur,  
 		Couleur const couleur, 
 		unsigned int const transparence);
-
-	Rectangle(Ligne const l1, 
-		int const dist, 
-		Couleur const couleur, 
-		unsigned int const transparence);
-
 
 	// Afficheurs
 
 	// Accesseurs
-	Ligne getLigne1(void);
 
 	// Mutateurs
-	void setLigne1(Ligne const &l);
 
 	// Draw
 	void draw(CImage *img);
@@ -49,8 +41,12 @@ public :
 
 
 private :
-	// Variables membres/attributs
-	// ATTENTION, PAS D'ORDRE PARTICULIER POUR LES LIGNES
+
+	// le premier point est en bas à gauche, ensuite j'évolue dans le sens des aiguilles d'une montre
+
+
+
+	// Variables membres aussi appelées attribus
 	Ligne m_l1;
 	Ligne m_l2;
 	Ligne m_l3;
@@ -58,7 +54,6 @@ private :
 
 	// Méthodes privées diverses
 	void calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur);
-	void calcul_lignes(int const &dist);
 };
 
 // Opérateurs
@@ -66,4 +61,4 @@ private :
 // Fonctions exterieures a la classe
 
 
-#endif // RECTANGLE_H
+#endif // RECTANGLE_V2_H

@@ -1,7 +1,7 @@
 // Camille Magnan & Clovis Durand
 // Dessin vectoriel
 
-#include "Cercle.h"
+#include "../../HEADERS/Formes/Cercle.h"
 using namespace std;
 
 //Constructeur/Destructeur

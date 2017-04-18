@@ -53,6 +53,10 @@ int main(int argc, char * argv[]) {
     cout << "DRAW : Drawing [rect]" << endl;
     rect.draw(img);
 
+    Rectangle rect2(l, 150, white, 0);
+    cout << "DRAW : Drawing [rect2]" << endl;
+    rect2.draw(img);
+
     image->setImage(img); // Met l'image dessinée dans l'objet CBitmap
     cout << "INFO : CBitmap image saving" << endl;
     image->SaveBMP(filename2); // Enregistre le CBitmap
