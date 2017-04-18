@@ -1,3 +1,11 @@
+// Clovis Durand & Camille Magnan
+// ENSEIRB-Matmeca, E2
+// 2017
+
+// PG208 - Projet Dessin Vectoriel
+
+// main.c source file
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>

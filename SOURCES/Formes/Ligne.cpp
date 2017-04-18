@@ -1,4 +1,7 @@
 // Camille Magnan & Clovis Durand
+// ENSEIRB-Matmeca, E2
+// 2017
+
 // PG208 - Projet Dessin Vectoriel
 
 // Ligne.cpp
