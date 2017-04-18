@@ -5,6 +5,8 @@
 #ifndef COULEUR_H
 #define COULEUR_H
 
+#include <string>
+
 class Couleur
 {
 public:
@@ -16,9 +18,9 @@ public:
 	// Afficheurs
 
 	// Accesseurs
-	unsigned int getRed();
-	unsigned int getGreen();
-	unsigned int getBlue();
+	unsigned int getRed(void);
+	unsigned int getGreen(void);
+	unsigned int getBlue(void);
 
 	// Mutateurs
 	void setRed(unsigned int r);

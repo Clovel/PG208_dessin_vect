@@ -13,8 +13,8 @@
 #include <string>
 #include <cmath>
 #include <iostream>
-#include "../Coord.h" 	// Point mathématique
-#include "../Couleur.h" // Couleur
+#include "../Others/Coord.h" 	// Point mathématique
+#include "../Others/Couleur.h" 	// Couleur
 
 class Forme
 {
@@ -39,4 +39,6 @@ private:
 	Coord m_c1;
 	Couleur m_color;
 	unsigned int m_transparence;
-}
+};
+
+#endif //FORME_H

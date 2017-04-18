@@ -11,10 +11,6 @@
 using namespace std;
 
 
-
-
-
-
 // Accesseurs
 Coord Forme::getCoord1(void) const
 {
@@ -23,7 +19,7 @@ Coord Forme::getCoord1(void) const
 
 Couleur Forme::getCouleur(void) const
 {
-	return m_couleur;
+	return m_color;
 }
 
 unsigned int Forme::getTransparence(void) const

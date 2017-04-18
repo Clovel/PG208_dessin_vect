@@ -7,12 +7,14 @@
 #include <string>
 #include <cmath>
 #include <iostream>
-#include "../Coord.h" // Point mathématique
 #include "../image/CImage.h"
-#include "../Couleur.h"
-#include "Forme.h"
+#include "../Others/Coord.h" 	// Point mathématique
+#include "../Others/Couleur.h"	// Couleur
+//#include "Forme.h"				// Pour heritage
 
-class Ligne : public Forme
+// ATTENTION, heritage pas encore implemente
+
+class Ligne //: public Forme
 {
 public:
 	// Con/Destructeurs
@@ -28,7 +30,7 @@ public:
 	// Accesseurs
 	Coord getCoord1(void) const;
 	Coord getCoord2(void) const;
-	std::string getCouleur(void) const;
+	Couleur getCouleur(void) const;
 	unsigned int getTransparence(void) const;
 	unsigned int getLongueur(void) const;
 
@@ -44,7 +46,7 @@ public:
 private:
 	// Attributs/Variables membres
 	Coord m_c1, m_c2;
-	std::string m_couleur;
+	Couleur m_couleur;
 	unsigned int m_transparence;
 
 	// Méthodes privée diverses 

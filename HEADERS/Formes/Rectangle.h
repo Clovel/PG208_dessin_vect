@@ -6,7 +6,7 @@
 
 #include <string>
 #include <cmath>
-#include "../Coord.h"
+#include "../Others/Coord.h"
 #include "Ligne.h"
 
 class Rectangle

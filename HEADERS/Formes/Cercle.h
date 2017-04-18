@@ -7,7 +7,7 @@
 
 #include <string>
 #include <cmath>
-#include "../Coord.h"
+#include "../Others/Coord.h"
 
 class Cercle
 {

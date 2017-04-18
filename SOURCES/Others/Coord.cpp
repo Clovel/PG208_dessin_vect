@@ -1,7 +1,7 @@
 // Camille Magnan & Clovis Durand
 // PG208 - Projet Dessin Vectoriel
 
-#include "../HEADERS/Coord.h"
+#include "../../HEADERS/Others/Coord.h"
 using namespace std;
 
 // Classe Coord permet de definir un point "mathemmatique"

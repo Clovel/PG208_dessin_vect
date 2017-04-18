@@ -44,7 +44,7 @@ Coord Ligne::getCoord2(void) const
 	return m_c2;
 }
 
-string Ligne::getCouleur(void) const
+Couleur Ligne::getCouleur(void) const
 {
 	return m_couleur;
 }
