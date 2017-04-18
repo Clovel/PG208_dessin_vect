@@ -80,6 +80,12 @@ void Couleur::trad_couleur(string c)
 		setGreen(0);
 		setBlue(255);
 	}
+	else if(c == "blanc")
+	{
+		setRed(255);
+		setGreen(255);
+		setBlue(255);
+	}
 
 }
 

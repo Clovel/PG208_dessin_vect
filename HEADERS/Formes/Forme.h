@@ -31,13 +31,13 @@ public:
 	unsigned int getTransparence(void) const;
 
 	// Mutateurs
-	void setCoord(Coord const &c1);
+	void setCoord1(Coord const &c1);
 	void setCouleur (Couleur const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
 private:
 	Coord m_c1;
-	Couleur m_color;
+	Couleur m_couleur;
 	unsigned int m_transparence;
 };
 

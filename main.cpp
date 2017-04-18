@@ -11,13 +11,13 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
 using namespace std;
-
-#include "./HEADERS/Format/CBitmap.h"
 
 #define WIDTH  1024
 #define HEIGHT 768
+
+#include "./HEADERS/Format/CBitmap.h"
+#include "./HEADERS/Formes/Ligne.h"
 
 
 int main(int argc, char * argv[]) {
@@ -40,6 +40,12 @@ int main(int argc, char * argv[]) {
         CPixel *p = img->getPixel(i, i);
         p->RGB(255,255,255);
     }
+
+    // Test dessin Ligne
+    Coord c1(300, 300), c2(500, 400);
+    Couleur white(255, 255, 255);
+    Ligne l(c1, c2, white, 0);
+    l.draw(img); // Dessine sur l'image
 
     image->setImage(img); // Met l'image dessinée dans l'objet CBitmap
     cout << "INFO : CBitmap image saving" << endl;

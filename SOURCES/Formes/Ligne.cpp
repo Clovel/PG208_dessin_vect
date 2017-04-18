@@ -12,19 +12,27 @@ using namespace std;
 
 // Con/Destructeur
 
-Ligne::Ligne(): m_couleur("UNKNOWN"), m_transparence(0)
+Ligne::Ligne()
 {
-	// Par defaut
+	setTransparence(0);
 }
 
 Ligne::Ligne(Coord const c1, Coord const c2, 
-	string const couleur, 
-	unsigned int const transparence): 	m_c1(c1), m_c2(c2), 
-										m_couleur(couleur), 
-										m_transparence(transparence)
+	Couleur const couleur, 
+	unsigned int const transparence)
+{
+	setCoord(c1, c2);
+	setCouleur(couleur);
+	setTransparence(transparence);
+}
+
+/*
+Ligne::Ligne(int const x0, int const y0, int const x1, int const y1, 
+	Couleur const c, 
+	unsigned int const transparence)
 {
 
-}
+}*/
 
 // Afficheurs
 
@@ -34,41 +42,34 @@ void Ligne::printInfoLigne(ostream &flux) const
 }
 
 // Accesseurs
-Coord Ligne::getCoord1(void) const
-{
-	return m_c1;
-}
 
 Coord Ligne::getCoord2(void) const
 {
 	return m_c2;
 }
 
-Couleur Ligne::getCouleur(void) const
-{
-	return m_couleur;
-}
-
-unsigned int Ligne::getTransparence(void) const
-{
-	return m_transparence;
-}
-
 unsigned int Ligne::getLongueur(void) const
 // Calcule et retourne la longueur de la ligne
 // Si le repere de coordonnees est entier, alors le resultat est un uInt
 {
-	return (unsigned int)sqrt((double)pow(m_c2.getAbscisse() - m_c1.getAbscisse(), 2) 
-		+ (double)pow(m_c2.getOrdonnee() - m_c1.getOrdonnee(), 2));
+	return (unsigned int)sqrt((double)pow(getCoord2().getAbscisse() - getCoord1().getAbscisse(), 2) 
+		+ (double)pow(getCoord2().getOrdonnee() - getCoord1().getOrdonnee(), 2));
+}
+
+// Mutateurs
+void Ligne::setCoord2(Coord const &c2)
+{
+	m_c2 = c2;
+}
+
+void Ligne::setCoord(Coord const &c1, Coord const &c2)
+{
+	setCoord1(c1);
+	setCoord2(c2);
 }
 
 // DRAW
-void swap(int a, int b)
-{
-	a=a+b;
-	b=a-b;
-	a=a-b;
-}
+
 
 void Ligne::draw(CImage *img)
 // Algorithme général optimisé de trace de segment de Bresenham
@@ -80,11 +81,23 @@ void Ligne::draw(CImage *img)
 	int y0(getCoord1().getOrdonnee());
 	int x1(getCoord2().getAbscisse());
 	int y1(getCoord2().getOrdonnee());
+	#ifdef DEBUG
+		cout << "x0 = " << x0 << endl;
+		cout << "y0 = " << y0 << endl;
+		cout << "x1 = " << x1 << endl;
+		cout << "y1 = " << y1 << endl;
+	#endif //DEBUG
+
 
 	// RGB / Couleur
 	unsigned int r(getCouleur().getRed());
 	unsigned int g(getCouleur().getGreen());
 	unsigned int b(getCouleur().getBlue());
+	#ifdef DEBUG
+		cout << "r = " << r << endl;
+		cout << "g = " << g << endl;
+		cout << "b = " << b << endl;
+	#endif // DEBUG
 
 	/* 
 		On remplace WindowDrawPoint par img->drawPixel
@@ -300,61 +313,6 @@ void Ligne::draw(CImage *img)
 			img->drawPixel(x0, y0, r, g, b);
 	}
 }
-
-
-/* // OLD VERSION
-void Ligne::draw(CImage *img)
-{
-	int i;
-	Coord c1(getCoord1()), c2(getCoord2());
-	int a1(getCoord1().getAbscisse()), a2(getCoord2().getAbscisse());
-	int o1(getCoord1().getOrdonnee()), o2(getCoord2().getOrdonnee());
-	if(a1 == a2)
-	// ligne verticale
-	{
-		if(o1 > o2)
-			swap(o1, o2);
-
-		// Verifier si ligne est dans le cadre
-
-		for (i = o1; i < o2; i++)
-		{
-			CPixel *p = img->getPixel(a1, i);
-			p->RGB(getCouleur().getRed(), getCouleur().getGreen(), getCouleur().getBlue());
-		}
-	}
-	else if(o1 == o2)
-	// ligne horizontale
-	{
-		if(a1 > a2)
-			swap(a1, a2);
-
-		// Verifier si ligne est dans le cadre
-
-		for (i = a1; i < a2; i++)
-		{
-			CPixel *p = img->getPixel(i, o1);
-			p->RGB(getCouleur().getRed(), getCouleur().getGreen(), getCouleur().getBlue());
-		}
-	}
-	else if (abs(o2 - o1) == abs(a2 - a1))
-	{
-		int distance = abs(o2 - o1);
-		// Verifier si ligne est dans le cadre
-
-		// Point de depart de la ligne
-		for (i = 0; i < distance; i++)
-		{
-			CPixel *p = img->getPixel(i, i);
-		}
-	}
-	else // cas ligne inclinee
-	{
-
-	}
-}*/ // OLD VERSION
-
-
 
 // Opérateurs
 ostream &operator<<(ostream &flux, Ligne const &l)
