@@ -5,10 +5,14 @@
 using namespace std;
 
 //Constructeur/Destructeur
+Cercle::Cerle(): m_rayon(0)
+{
+	//Par défaut
+}
 
 Cercle::Cercle(Coord c,
 	unsigned int rayon,
-	std::string const couleur, 
+	Couleur const couleur, 
 	unsigned int const transparence);
 {
 	setC(c);
@@ -26,7 +30,7 @@ Coord Cercle::getC(){
 	return m_c;
 }
 
-int Cercle::getRayon(){
+unsigned int Cercle::getRayon(){
 
 	return m_rayon;
 }
@@ -50,7 +54,7 @@ void Cercle::setC(Coord c){
 
 void Cercle::setRayon(unsigned int rayon){
 
-	m_transparence = transparence;
+	m_rayon = rayon;
 }
 
 void Cercle::setCouleur(string couleur){
@@ -63,6 +67,37 @@ void Cercle::setTransparence(unsigned int transparence){
 	m_transparence = transparence;
 }
 
+// DRAW
 
 
+void Cercle::draw(CImage *img)
 
+{
+	int dx; // Distance
+
+	// Coordonnées 
+	int x(getCoord().getAbscisse());
+	int y(getCoord().getOrdonnee());
+	int xmin;
+	int ymin;
+	int xmax;
+	int ymax;
+
+	if ((x - rayon) < 0){
+		xmin = 0;
+	}
+	else {
+		xmin = x - rayon;
+	}
+	if ((x + rayon) > 1024){
+		xmax = 1024;
+	}
+	else {
+		xmax = x + rayon;
+	}
+	
+	if ((y - rayon) < 0){
+		ymin = 0;
+	}
+	else
+}

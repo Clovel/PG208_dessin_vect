@@ -7,7 +7,10 @@
 
 #include <string>
 #include <cmath>
-#include "../Coord.h"
+#include <iostream>
+#include "../image/CImage.h"
+#include "../Others/Coord.h" 	// Point mathématique
+#include "../Others/Couleur.h"	// Couleur
 #include "Forme.h"
 
 class Cercle : public Forme
@@ -15,6 +18,7 @@ class Cercle : public Forme
 public :
 
 //Constructeur
+	Cercle();
 	Cercle(Coord c,
 		   unsigned int rayon,
 		   Couleur const couleur, 
@@ -43,4 +47,4 @@ private :
 	unsigned int m_rayon;
 	unsigned int m_transparence;	
 
-}
+};
