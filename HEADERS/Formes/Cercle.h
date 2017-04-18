@@ -7,41 +7,44 @@
 
 #include <string>
 #include <cmath>
-#include "../Others/Coord.h"
+#include <iostream>
+#include "../image/CImage.h"
+#include "../Others/Coord.h" 	// Point mathématique
+#include "../Others/Couleur.h"	// Couleur
+#include "Forme.h"
 
-class Cercle
+class Cercle : public Forme
 {
 public :
 
 //Constructeur
-	Cercle(Coord const c,
-		   unsigned int const rayon,
-		   std::string const couleur, 
+	Cercle();
+	Cercle(Coord c,
+		   unsigned int rayon,
+		   Couleur const couleur, 
 		   unsigned int const transparence);
 
 //Afficheurs
 
 //Accesseurs
-	Coord getC(void) const;
-	unsigned int getRayon(void) const;
-	std::string getCouleur(void) const;
-	unsigned int getTransparence(void) const;
+	Coord getC(void);
+	unsigned int getRayon(void);
+	Couleur getCouleur(void);
+	unsigned int getTransparence(void);
 
 // Mutateurs
 	void setC(Coord const &c);
-	void setRayon(unsigned int const &rayon);
-	void setCouleur(std::string const &couleur);
-	void setTransparence(unsigned int const &transparence);
+	void setRayon(unsigned int &rayon)	
+	void setCouleur(Couleur const &couleur);
+	void setTransparence(unsigned int &transparence);
 
 //Méthodes publiques diverses
 
 private :
 // Variables membres aussi appelées attribus
 	Coord m_c;
-	std::string m_couleur;
+	Couleur m_couleur;
 	unsigned int m_rayon;
 	unsigned int m_transparence;	
 
 };
-
-#endif //CERCLE_H
