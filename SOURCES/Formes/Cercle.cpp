@@ -102,8 +102,13 @@ void Cercle::draw(CImage *img)
 	else{
 		ymin = y - rayon;
 	}
-	if ((y + rayon >))
-
+	if ((y + rayon > 768)){
+		ymax = 768;
+	}
+	else{
+		ymax = y + rayon;
+	}
+	
 	#ifdef DEBUG
 		cout << "x = " << x << endl;
 		cout << "y = " << y << endl;
