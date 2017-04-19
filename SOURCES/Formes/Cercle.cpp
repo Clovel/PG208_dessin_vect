@@ -115,7 +115,7 @@ void Cercle::draw(CImage *img)
 	int y0 = rayon;
 	int d = r -1;
 
-	while(y >= x0){
+	while(y0 >= x0){
 
 		img->drawPixel(x + x0, y+ y0, r, g, b);
 		img->drawPixel(x + y0, y+ x0, r, g, b);
@@ -131,13 +131,13 @@ void Cercle::draw(CImage *img)
 			x++;
 		}
 		else if (d < 2 * (rayon - y0)){
-			d += 2 * y - 1;
-			y--;
+			d += 2 * y0 - 1;
+			y0--;
 		}
 		else{
-			d += 2 * (y - x - 1);
-			y--;
-			x++;
+			d += 2 * (y0 - x0 - 1);
+			y0--;
+			x0++;
 		}
 	}
 }

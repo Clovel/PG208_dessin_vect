@@ -19,7 +19,15 @@ using namespace std;
 #include "./HEADERS/Format/CBitmap.h"
 #include "./HEADERS/Formes/Ligne.h"
 #include "./HEADERS/Formes/Rectangle.h"
+<<<<<<< Updated upstream
 #include "./HEADERS/Formes/Triangle.h"
+=======
+<<<<<<< HEAD
+#include "./HEADERS/Formes/Cercle.h"
+=======
+#include "./HEADERS/Formes/Triangle.h"
+>>>>>>> origin/master
+>>>>>>> Stashed changes
 
 
 int main(int argc, char * argv[]) {
