@@ -10,11 +10,6 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 
-#include <string>
-#include <cmath>
-#include "../Others/Coord.h"
-#include "../Others/Couleur.h"
-#include "Forme.h"
 #include "Ligne.h"
 
 class Rectangle : public Forme

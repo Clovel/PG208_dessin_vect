@@ -19,6 +19,7 @@ using namespace std;
 #include "./HEADERS/Format/CBitmap.h"
 #include "./HEADERS/Formes/Ligne.h"
 #include "./HEADERS/Formes/Rectangle.h"
+#include "./HEADERS/Formes/Triangle.h"
 
 
 int main(int argc, char * argv[]) {
@@ -43,7 +44,7 @@ int main(int argc, char * argv[]) {
     }
 
     // Test dessin Ligne
-    Coord c1(300, 300), c2(500, 400);
+    Coord c1(300, 300), c2(500, 400), c3(900, 100);
     Couleur white(255, 255, 255);
     Ligne l(c1, c2, white, 0);
     cout << "DRAW : Drawing [l]" << endl;
@@ -56,6 +57,10 @@ int main(int argc, char * argv[]) {
     Rectangle rect2(l, 150, white, 0);
     cout << "DRAW : Drawing [rect2]" << endl;
     rect2.draw(img);
+
+    Triangle tri(l, c3, white, 0);
+    cout << "DRAW : Drawing [tri]" << endl;
+    tri.draw(img);
 
     image->setImage(img); // Met l'image dessinée dans l'objet CBitmap
     cout << "INFO : CBitmap image saving" << endl;

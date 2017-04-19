@@ -4,12 +4,7 @@
 #ifndef LIGNE_H // Pour ne pas l'inclure plusieurs fois
 #define LIGNE_H
 
-#include <string>
-#include <cmath>
-#include <iostream>
 #include "../image/CImage.h"
-#include "../Others/Coord.h" 	// Point mathématique
-#include "../Others/Couleur.h"	// Couleur
 #include "Forme.h"				// Pour heritage
 
 // ATTENTION, heritage pas encore implemente
