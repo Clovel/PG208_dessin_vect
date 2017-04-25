@@ -89,5 +89,13 @@ void Couleur::trad_couleur(string c)
 
 }
 
+void Couleur::trad_couleur(unsigned int r, unsigned int g, unsigned int b)
+{
+
+	setRed(r);
+	setBlue(b);
+	setGreen(g);
+
+}
 
 

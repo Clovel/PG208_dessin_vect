@@ -35,6 +35,15 @@ public:
 	void setCouleur (Couleur const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
+	// Attribus
+	int R,G,B
+
+
+	// Méthode
+	void getRGBcolor();
+	// rajouter transparence
+
+
 private:
 	Coord m_c1;
 	Couleur m_couleur;

@@ -83,30 +83,30 @@ void Cercle::draw(CImage *img)
 	int xmax;
 	int ymax;
 
-	if ((x - rayon) < 0){
+	if ((x - getRayon()) < 0){
 		xmin = 0;
 	}
 	else {
-		xmin = x - rayon;
+		xmin = x - getRayon();
 	}
-	if ((x + rayon) > 1024){
+	if ((x + getRayon()) > 1024){
 		xmax = 1024;
 	}
 	else {
-		xmax = x + rayon;
+		xmax = x + getRayon();
 	}
 	
-	if ((y - rayon) < 0){
+	if ((y - getRayon()) < 0){
 		ymin = 0;
 	}
 	else{
-		ymin = y - rayon;
+		ymin = y - getRayon();
 	}
-	if ((y + rayon > 768)){
+	if ((y + getRayon() > 768)){
 		ymax = 768;
 	}
 	else{
-		ymax = y + rayon;
+		ymax = y + getRayon();
 	}
 	
 	#ifdef DEBUG
@@ -117,8 +117,8 @@ void Cercle::draw(CImage *img)
 	#endif //DEBUG
 
 	int x0 = 0;
-	int y0 = rayon;
-	int d = r -1;
+	int y0 = getRayon();
+	int d = getRayon() -1;
 
 	while(y0 >= x0){
 
@@ -135,7 +135,7 @@ void Cercle::draw(CImage *img)
 			d -= 2 * x0 + 1;
 			x++;
 		}
-		else if (d < 2 * (rayon - y0)){
+		else if (d < 2 * (getRayon() - y0)){
 			d += 2 * y0 - 1;
 			y0--;
 		}

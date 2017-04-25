@@ -34,9 +34,11 @@ public :
 
 // Mutateurs
 	void setC(Coord const &c);
-	void setRayon(unsigned int &rayon)	
+	void setRayon(unsigned int &rayon);	
 	void setCouleur(Couleur const &couleur);
 	void setTransparence(unsigned int &transparence);
+	
+	void Cercle::draw(CImage *img);
 
 //Méthodes publiques diverses
 
@@ -48,3 +50,5 @@ private :
 	unsigned int m_transparence;	
 
 };
+
+#endif 
