@@ -35,9 +35,6 @@ public:
 	void setCouleur (Couleur const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
-	// Attribus
-	int R,G,B
-
 
 	// Méthode
 	void getRGBcolor();
@@ -48,6 +45,7 @@ private:
 	Coord m_c1;
 	Couleur m_couleur;
 	unsigned int m_transparence;
+	int R,G,B;
 };
 
 #endif //FORME_H

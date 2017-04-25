@@ -10,6 +10,12 @@
 #ifndef RECTANGLE_P_H
 #define RECTANGLE_P_H
 
+#include <string>
+#include <cmath>
+#include <iostream>
+#include "../image/CImage.h"
+#include "../Others/Coord.h" 	
+#include "Forme.h"
 
 class Rectangle_P : public Forme
 {
@@ -19,13 +25,17 @@ public :
 	Rectangle_p(Coord const c1, 
 		unsigned int const longueur, 
 		unsigned int const hauteur,  
-		Couleur const couleur, 
+		std::string const couleur, 
 		unsigned int const transparence);
 
 	Rectangle_p(Ligne const l1, 
 		int const dist, 
-		Couleur const couleur, 
+		std::string const couleur, 
 		unsigned int const transparence);
+
+	unsigned int const longueur;
+	unsigned int const hauteur;
+
 
 
 	// Afficheurs
