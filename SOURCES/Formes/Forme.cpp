@@ -57,3 +57,44 @@ void Forme::setTransparence(unsigned int const &transparence)
 {
 	m_transparence = transparence;
 }
+
+void getRGBcolor()
+{
+    if (color=="rouge")
+    {
+        R = 255;
+        G = 0;
+        B = 0; }
+    if (color=="bleu")
+    {
+        R = 0;
+        G = 0;
+        B = 255; }
+    if (color=="vert")
+    {
+        R = 0;
+        G = 255;
+        B = 0; }
+    if (color=="jaune")
+    {
+        R = 255;
+        G = 255;
+        B = 0; }
+    if (color=="marron")
+    {
+        R = 167;
+        G =85;
+        B = 2; }
+    if (color=="blanc")
+    {
+        R = 255;
+        G =255;
+        B = 255; }
+    if (color=="rose")
+    {
+        R = 253;
+        G =108;
+        B = 158; }
+}
+
+// rajouter transparence
