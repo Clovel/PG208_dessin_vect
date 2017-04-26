@@ -18,11 +18,11 @@ Ligne::Ligne()
 }
 
 Ligne::Ligne(Coord const c1, Coord const c2, 
-	Couleur const couleur, 
+	string const couleur, 
 	unsigned int const transparence)
 {
 	setCoord(c1, c2);
-	setCouleur(couleur);
+	setRGBcouleur(couleur);
 	setTransparence(transparence);
 }
 
@@ -89,9 +89,9 @@ void Ligne::draw(CImage *img)
 
 
 	// RGB / Couleur
-	unsigned int r(getCouleur().getRed());
-	unsigned int g(getCouleur().getGreen());
-	unsigned int b(getCouleur().getBlue());
+	unsigned int r(getRed());
+	unsigned int g(getGreen());
+	unsigned int b(getBlue());
 	#ifdef DEBUG
 		cout << "r = " << r << endl;
 		cout << "g = " << g << endl;

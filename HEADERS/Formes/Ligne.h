@@ -16,7 +16,7 @@ public:
 	Ligne();
 	Ligne(Coord const c1, 
 		  Coord const c2, 
-		  Couleur const couleur,
+		  std::string const couleur,
 		  unsigned int const transparence);
 
 	// Afficheurs

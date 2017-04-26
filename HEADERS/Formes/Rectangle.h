@@ -20,12 +20,12 @@ public :
 	Rectangle(Coord const c1, 
 		unsigned int const longueur, 
 		unsigned int const hauteur,  
-		Couleur const couleur, 
+		std::string const couleur, 
 		unsigned int const transparence);
 
 	Rectangle(Ligne const l1, 
 		int const dist, 
-		Couleur const couleur, 
+		std::string const couleur, 
 		unsigned int const transparence);
 
 
@@ -50,6 +50,7 @@ private :
 	Ligne m_l2;
 	Ligne m_l3;
 	Ligne m_l4;
+	std::string m_couleur;
 
 	// Méthodes privées diverses
 	void calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur);

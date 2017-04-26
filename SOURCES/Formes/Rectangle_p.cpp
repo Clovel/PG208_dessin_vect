@@ -13,12 +13,15 @@
 Rectangle_P::Rectangle(Coord const c1, 
 	unsigned int const longueur, 
 	unsigned int const hauteur,  
-	Couleur const couleur, 
+	std::string couleur, 
 	unsigned int const transparence)
 {
-	setCoord1(c1);
-	setCouleur(couleur);
-	setTransparence(transparence);
+	m_c1 = c1;
+	m_transparence = transparence;
+	unsigned int const longueur;
+	unsigned int const hauteur;
+	setRGBcouleur(couleur);
+
 }
 
 
@@ -35,7 +38,7 @@ void setCoord1(Coord const &Coord1);
 // Colorier
 void color(CImage *img)
 {
-	getRGBcolor()
+	setRGBcolor()
 int i, j;
 
 for(i = Coord1.getAbscisse(); i >= longueur; i++)

@@ -1,8 +1,8 @@
 // Camille Magnan & Clovis Durand
 // Dessin vectoriel
 
-#ifndef CERCLE_H
-#define CERCLE_H
+#ifndef CERCLE_2.H
+#define CERCLE_2.H
 
 
 #include <string>
@@ -17,12 +17,11 @@ class Cercle : public Forme
 public :
 
 // Constructeur
-	Cercle(Coord _c, int rayon, std::string couleur, int transparence);
+	Cercle(Coord c, int rayon, std::string couleur, int transparence);
 	dessinerFull(CImage* Image);
 	dessiner(CImage* Image);
 
 // attribus
 int m_rayon;
-
 
 }

@@ -7,13 +7,12 @@
 // Rectangle.cpp
 // Rectangle class source file. 
 
-#include "../../HEADERS/Formes/Rectangle.h"
+#include "../../HEADERS/Formes/Carre.h"
 using namespace std;
 
 // Con/Destructeur
 Rectangle::Rectangle(Coord const c1, 
-	unsigned int const longueur, 
-	unsigned int const hauteur,  
+	unsigned int const cote,   
 	string const couleur, 
 	unsigned int const transparence)
 {
@@ -21,7 +20,7 @@ Rectangle::Rectangle(Coord const c1,
 	setRGBcouleur(couleur);
 	setTransparence(transparence);
 	setCouleur(couleur);
-	calcul_lignes(longueur, hauteur);
+	calcul_lignes(cote);
 }
 
 Rectangle::Rectangle(Ligne const l1, 
@@ -63,12 +62,12 @@ void Rectangle::draw(CImage *img)
 // Méthodes publiques diverses
 
 // Méthodes privées diverses
-void Rectangle::calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur)
+void Rectangle::calcul_lignes(unsigned int const &cote)
 {
 	Coord c1 = getCoord1();
-	Coord c2(c1.getAbscisse(), c1.getOrdonnee() + hauteur);
-	Coord c3(c1.getAbscisse() + longueur, c1.getOrdonnee() + hauteur);
-	Coord c4(c1.getAbscisse() + longueur, c1.getOrdonnee());
+	Coord c2(c1.getAbscisse(), c1.getOrdonnee() + cote);
+	Coord c3(c1.getAbscisse() + cote, c1.getOrdonnee() + cote);
+	Coord c4(c1.getAbscisse() + cote, c1.getOrdonnee());
 
 	// ATTENTION, PAS D'ORDRE PARTICULIER
 	m_l1 = Ligne(c1, c2, getCouleur(), getTransparence());

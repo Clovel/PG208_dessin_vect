@@ -22,30 +22,31 @@ public:
 	// Con/Destructeurs
 	Forme();
 	Forme(Coord const c1, 
-		  Couleur const couleur,
+		  std::string const couleur,
 		  unsigned int const transparence);
 
 	// Accesseurs
 	Coord getCoord1(void) const;
-	Couleur getCouleur(void) const;
+	std::string getCouleur(void) const;
+	int getRed(void);
+	int getGreen(void);
+	int getBlue(void);
 	unsigned int getTransparence(void) const;
 
 	// Mutateurs
 	void setCoord1(Coord const &c1);
-	void setCouleur (Couleur const &couleur);
+	void setRGBcouleur (std::string const &couleur);
 	void setTransparence(unsigned int const &transparence);
+	void setCouleur(std::string const &couleur)
 
-
-	// Méthode
-	void getRGBcolor();
 	// rajouter transparence
 
 
 private:
 	Coord m_c1;
-	Couleur m_couleur;
 	unsigned int m_transparence;
-	int R,G,B;
+	string m_couleur;
+    int m_R,m_G,m_B;
 };
 
 #endif //FORME_H

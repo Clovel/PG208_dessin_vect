@@ -18,11 +18,11 @@ Forme::Forme()
 }
 
 Forme::Forme(Coord const c1, 
-	Couleur const couleur,
+	string const couleur,
 	unsigned int const transparence)
 {
 	setCoord1(c1);
-	setCouleur(couleur);
+	setRGBcouleur(couleur);
 	setTransparence(transparence);
 }
 
@@ -32,10 +32,21 @@ Coord Forme::getCoord1(void) const
 	return m_c1;
 }
 
-Couleur Forme::getCouleur(void) const
+int Forme::getRed(void) const
 {
-	return m_couleur;
+	return m_R;
 }
+
+int Forme::getGreen(void) const
+{
+    return m_G;
+}
+
+int Forme::getBlue(void) const
+{
+    return m_B;
+}
+
 
 unsigned int Forme::getTransparence(void) const
 {
@@ -48,53 +59,55 @@ void Forme::setCoord1(Coord const &c1)
 	m_c1 = c1;
 }
 
-void Forme::setCouleur (Couleur const &couleur)
-{
-	m_couleur = couleur;
-}
-
 void Forme::setTransparence(unsigned int const &transparence)
 {
 	m_transparence = transparence;
 }
 
-void getRGBcolor()
+void Forme::setRGBcouleur(string const couleur)
 {
-    if (color=="rouge")
+    if (coulor=="rouge")
     {
-        R = 255;
-        G = 0;
-        B = 0; }
-    if (color=="bleu")
+        m_R = 255;
+        m_G = 0;
+        m_B = 0; }
+    if (couleur=="bleu")
     {
-        R = 0;
-        G = 0;
-        B = 255; }
-    if (color=="vert")
+        m_R = 0;
+        m_G = 0;
+        m_B = 255; }
+    if (couleur=="vert")
     {
-        R = 0;
-        G = 255;
-        B = 0; }
-    if (color=="jaune")
+        m_R = 0;
+        m_G = 255;
+        m_B = 0; }
+    if (couleur=="jaune")
     {
-        R = 255;
-        G = 255;
-        B = 0; }
-    if (color=="marron")
+        m_R = 255;
+        m_G = 255;
+        m_B = 0; }
+    if (couleur=="marron")
     {
-        R = 167;
-        G =85;
-        B = 2; }
-    if (color=="blanc")
+        m_R = 167;
+        m_G =85;
+        m_B = 2; }
+    if (couleur=="blanc")
     {
-        R = 255;
-        G =255;
-        B = 255; }
-    if (color=="rose")
+        m_R = 255;
+        m_G =255;
+        m_B = 255; }
+    if (couleur=="rose")
     {
-        R = 253;
-        G =108;
-        B = 158; }
+        m_R = 253;
+        m_G =108;
+        m_B = 158; }
+}
+
+void Forme::setRGBcouleur(int R, int G, int B)
+{
+    m_R = R;
+    m_G = G;
+    m_B = B;
 }
 
 // rajouter transparence
