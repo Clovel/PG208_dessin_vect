@@ -7,13 +7,20 @@
 // Cercle_p.h
 // Cercle_p class header file. 
 
-#include "Cercle.h"
+#ifndef CERCLE_P_H
+#define CERCLE_P_H
 
+#include "Cercle.h"
 
 class Cercle_p : public Cercle
 {
 public:
 	// Con/Destructeurs
+	Cercle_p();
+	Cercle_p(Coord const c, 
+		unsigned int const rayon, 
+    	std::string const couleur, 
+    	unsigned int const transparence);
 
 	// Afficheurs
 
@@ -22,7 +29,7 @@ public:
 	// Mutateurs
 
 	// Draw
-	draw(CImage* Image);
+	void draw(CImage *Image) const;
 
 	// Méthodes publiques Diverses
 
@@ -30,4 +37,6 @@ public:
 	// Attributs/Variables membres
 
 	// Méthodes privées diverses 
-}
+};
+
+#endif // CERCLE_P_H

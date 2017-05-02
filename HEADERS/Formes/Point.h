@@ -7,8 +7,8 @@
 // Point.h
 // Point class header file. 
 
-#ifndef POINT.H
-#define POINT.H
+#ifndef POINT_H
+#define POINT_H
 
 #include "Forme.h"
 
@@ -17,7 +17,9 @@ class Point : public Forme
 public :
 	// Con/Destructeurs
 	Point();
-	Point(Coord c, std::string couleur, int transparence);
+	Point(Coord const c, 
+		std::string const couleur, 
+		unsigned int const transparence);
 	// Afficheurs
 
 	// Accesseurs
@@ -25,7 +27,7 @@ public :
 	// Mutateurs
 
 	// Draw
-	draw(CImage* Image);
+	void draw(CImage* Image) const;
 
 	// Méthodes publiques Diverses
 
@@ -34,3 +36,5 @@ public :
 
 	// Méthodes privées diverses 
 };
+
+#endif //POINT_H

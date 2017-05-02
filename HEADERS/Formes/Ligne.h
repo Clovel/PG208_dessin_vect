@@ -27,10 +27,10 @@ public:
 
 	// Mutateurs
 	void setCoord2(Coord const &c2);
-	void setCoord(Coord const &c1, Coord const &c2);
+	void setCoords(Coord const &c1, Coord const &c2);
 
 	// Draw
-	void draw(CImage *img);
+	void draw(CImage *img) const;
 
 	// Méthodes publiques Diverses
 

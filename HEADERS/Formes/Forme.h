@@ -16,6 +16,9 @@
 #include "../Others/Coord.h" 	// Point mathématique
 #include "../image/CImage.h"	// Pour dessiner (sert pour les descendants de class Forme)
 
+#define MIN( X, Y ) ((X < Y) ? X : Y)
+#define MAX( X, Y ) ((X > Y) ? X : Y)
+
 // Sert a retourner 3 uInt en sortie d'une f°
 typedef struct RGB
 {
@@ -35,7 +38,9 @@ public:
 
 	// Accesseurs
 	Coord getCoord1(void) const;
+	std::string getCouleur(void) const;
 	unsigned int getTransparence(void) const;
+	RGB_t getRGB(void) const; // Traduction string -> RGB
 
 	// Mutateurs
 	void setCoord1(Coord const &c1);
@@ -51,7 +56,7 @@ private:
     unsigned int m_transparence;
 
 	// Méthodes privées diverses
-    RGB_t getRGB(void) const; // Traduction string -> RGB
+    
 };
 
 

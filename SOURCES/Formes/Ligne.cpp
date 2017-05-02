@@ -10,10 +10,11 @@
 #include "../../HEADERS/Formes/Ligne.h"
 using namespace std;
 
-// Con/Destructeur
+// Con/Destructeur --------------------------------------------------
 
 Ligne::Ligne()
 {
+	setCouleur("blanc");
 	setTransparence(0);
 }
 
@@ -21,28 +22,18 @@ Ligne::Ligne(Coord const c1, Coord const c2,
 	string const couleur, 
 	unsigned int const transparence)
 {
-	setCoord(c1, c2);
-	setRGBcouleur(couleur);
+	setCoords(c1, c2);
+	setCouleur(couleur);
 	setTransparence(transparence);
 }
 
-/*
-Ligne::Ligne(int const x0, int const y0, int const x1, int const y1, 
-	Couleur const c, 
-	unsigned int const transparence)
-{
-
-}*/
-
-// Afficheurs
-
+// Afficheurs -------------------------------------------------------
 void Ligne::printInfoLigne(ostream &flux) const
 {
 	flux << getCoord1() << " to " << getCoord2();
 }
 
-// Accesseurs
-
+// Accesseurs -------------------------------------------------------
 Coord Ligne::getCoord2(void) const
 {
 	return m_c2;
@@ -56,21 +47,20 @@ unsigned int Ligne::getLongueur(void) const
 		+ (double)pow(getCoord2().getOrdonnee() - getCoord1().getOrdonnee(), 2));
 }
 
-// Mutateurs
+// Mutateurs --------------------------------------------------------
 void Ligne::setCoord2(Coord const &c2)
 {
 	m_c2 = c2;
 }
 
-void Ligne::setCoord(Coord const &c1, Coord const &c2)
+void Ligne::setCoords(Coord const &c1, Coord const &c2)
 {
 	setCoord1(c1);
 	setCoord2(c2);
 }
 
-// Draw
-
-void Ligne::draw(CImage *img)
+// Draw -------------------------------------------------------------
+void Ligne::draw(CImage *img) const
 // Algorithme général optimisé de trace de segment de Bresenham
 {
 	int dx, dy; // Distances
@@ -89,7 +79,7 @@ void Ligne::draw(CImage *img)
 
 
 	// RGB / Couleur
-	RGB_t rgb = getCouleur();
+	RGB_t rgb(getRGB());
 	unsigned int r(rgb.r);
 	unsigned int g(rgb.g);
 	unsigned int b(rgb.b);
@@ -310,11 +300,11 @@ void Ligne::draw(CImage *img)
 	}
 }
 
-// Opérateurs
+// Opérateurs -------------------------------------------------------
 ostream &operator<<(ostream &flux, Ligne const &l)
 {
     l.printInfoLigne(flux);
     return flux;
 }
 
-// Fonction diverses
+// Fonction diverses ------------------------------------------------

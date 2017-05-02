@@ -32,13 +32,19 @@ public :
 	// Afficheurs
 
 	// Accesseurs
-	Ligne getLigne1(void);
+	Ligne getLigne1(void) const;
+	Ligne getLigne2(void) const;
+	Ligne getLigne3(void) const;
+	Ligne getLigne4(void) const;
 
 	// Mutateurs
 	void setLigne1(Ligne const &l);
+	void setLigne2(Ligne const &l);
+	void setLigne3(Ligne const &l);
+	void setLigne4(Ligne const &l);
 
 	// Draw
-	void draw(CImage *img);
+	void draw(CImage *img) const;
 
 	// Méthodes publiques diverses
 
@@ -49,6 +55,15 @@ private :
 	Ligne m_l2;
 	Ligne m_l3;
 	Ligne m_l4;
+
+	// Ordre pour le rectangle droit
+	//           m_l2
+	//      +-------------+
+	//      |             |
+	// m_l1 |             | m_l3
+	//      |             |
+	//      +-------------+
+	//           m_l4
 
 	// Méthodes privées diverses
 	void calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur);

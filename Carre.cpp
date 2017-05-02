@@ -17,9 +17,8 @@ Rectangle::Rectangle(Coord const c1,
 	unsigned int const transparence)
 {
 	setCoord1(c1);
-	setRGBcouleur(couleur);
-	setTransparence(transparence);
 	setCouleur(couleur);
+	setTransparence(transparence);
 	calcul_lignes(cote);
 }
 
@@ -30,7 +29,6 @@ Rectangle::Rectangle(Ligne const l1,
 {
 	setLigne1(l1);
 	setCoord1(l1.getCoord1());
-	setRGBcouleur(couleur);
 	setCouleur(couleur);
 	setTransparence(transparence);
 	calcul_lignes(dist);

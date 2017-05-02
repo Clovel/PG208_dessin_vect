@@ -4,40 +4,52 @@
 #include "../../HEADERS/Formes/Cercle.h"
 
 // Con/Destructeurs
-Cercle::Cercle()
-{	
-	m_rayon(1); // Valeur par defaut a définir, 1 pour le moment
+Cercle::Cercle(): m_rayon(1)
+{
+    // Valeur par defaut a définir, 1 pour le moment
 }
 
-Cercle::Cercle(Coord c, int rayon, std::string couleur, int transparence)
+Cercle::Cercle(Coord const c, 
+    unsigned int const rayon, 
+    std::string const couleur, 
+    unsigned int const transparence)
 {
-	m_transparence = transparence;
-	m_c1 = c;
-	m_rayon = rayon;
-	setRGBcouleur(couleur);
-	m_couleur = couleur;
+	setCoord1(c);
+    setRayon(rayon);
+    setCouleur(couleur);
+    setTransparence(transparence);
 }
 
 // Afficheurs
 
 // Accesseurs
+unsigned int Cercle::getRayon(void) const
+{
+    return m_rayon;
+}
 
 // Mutateurs
+void Cercle::setRayon(unsigned int const &rayon)
+{
+    m_rayon = rayon;
+}
 
 // Draw
-Cercle::draw(CImage *img)
+void Cercle::draw(CImage *img) const
 {
+    float seg;
 
-    for(int i = max(x - rayon, 0); i < min(x + rayon + 1, img->size()); i++)
+    int x = getCoord1().getAbscisse();
+    int y = getCoord1().getOrdonnee();
+
+    for(int i = MAX(x - getRayon(), 0); i < MIN(x + getRayon() + 1, img->size()); i++)
     {
-        for (int j = max(y - rayon,0); j < min(y + rayon + 1, img->size()); j++)
+        for (int j = MAX(y - getRayon(),0); j < MIN(y + getRayon() + 1, img->size()); j++)
         {
-            float seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
+            seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
 
-            if ((seg < (rayon + 2)) & (seg > (rayon - 2))) // 2 étant un epsilon
-            {
-                img->drawPixel(i, j, getRed(), getGreen(), getBlue());
-            }
+            if ((seg < (getRayon() + .5)) & (seg > (getRayon() - .5))) // .5 étant un epsilon
+                img->drawPixel(i, j, getRGB().r, getRGB().g, getRGB().b);
         }
     }
 }
@@ -47,10 +59,3 @@ Cercle::draw(CImage *img)
 // Attributs/Variables membres
 
 // Méthodes privées diverses 
-
-
-//CERCLE VIDE
-
-
-
-//CERCLE VIDE

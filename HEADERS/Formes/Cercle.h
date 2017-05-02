@@ -1,8 +1,8 @@
 // Camille Magnan & Clovis Durand
 // Dessin vectoriel
 
-#ifndef CERCLE_2.H
-#define CERCLE_2.H
+#ifndef CERCLE_H
+#define CERCLE_H
 
 #include "Forme.h"
 
@@ -12,16 +12,21 @@ public :
 
 	// Constructeur
 	Cercle();
-	Cercle(Coord c, int rayon, std::string couleur, int transparence);
+	Cercle(Coord const c, 
+		unsigned int const rayon, 
+		std::string const couleur, 
+		unsigned int const transparence);
 
 	// Afficheurs
 
 	// Accesseurs
+	unsigned int getRayon(void) const;
 
 	// Mutateurs
+	void setRayon(unsigned int const &rayon);
 
 	// Draw
-	draw(CImage* Image);
+	void draw(CImage *Image) const;
 
 	// Méthodes publiques Diverses
 
@@ -32,3 +37,5 @@ private:
 	// Méthodes privées diverses 
 
 };
+
+#endif //CERCLE_H
