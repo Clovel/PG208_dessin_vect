@@ -45,8 +45,5 @@ private:
 // Opérateurs
 std::ostream &operator<<(std::ostream &flux, Ligne const &l);
 
-// Passage par reference (avec &) pour eviter 
-	// de recopier les variables pour rien
-
 
 #endif // LIGNE_H

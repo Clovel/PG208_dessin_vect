@@ -89,18 +89,15 @@ void Ligne::draw(CImage *img)
 
 
 	// RGB / Couleur
-	unsigned int r(getRed());
-	unsigned int g(getGreen());
-	unsigned int b(getBlue());
+	RGB_t rgb = getCouleur();
+	unsigned int r(rgb.r);
+	unsigned int g(rgb.g);
+	unsigned int b(rgb.b);
 	#ifdef DEBUG
 		cout << "r = " << r << endl;
 		cout << "g = " << g << endl;
 		cout << "b = " << b << endl;
 	#endif // DEBUG
-
-	/* 
-		On remplace WindowDrawPoint par img->drawPixel
-	*/
 
 	if ((dx = x1 - x0) != 0)
 	{

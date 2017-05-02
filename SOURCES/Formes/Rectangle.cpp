@@ -17,6 +17,7 @@ Rectangle::Rectangle(Coord const c1,
 	string const couleur, 
 	unsigned int const transparence)
 {
+	// Droit
 	setCoord1(c1);
 	setRGBcouleur(couleur);
 	setTransparence(transparence);
@@ -29,6 +30,7 @@ Rectangle::Rectangle(Ligne const l1,
 	string const couleur, 
 	unsigned int const transparence)
 {
+	// De biais
 	setLigne1(l1);
 	setCoord1(l1.getCoord1());
 	setRGBcouleur(couleur);

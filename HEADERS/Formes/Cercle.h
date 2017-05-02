@@ -16,13 +16,25 @@ class Cercle : public Forme
 {
 public :
 
-// Constructeur
+	// Constructeur
 	Cercle();
 	Cercle(Coord c, int rayon, std::string couleur, int transparence);
-	dessinerFull(CImage* Image);
-	dessiner(CImage* Image);
 
-// attribus
-unsigned int m_rayon;
+	// Afficheurs
+
+	// Accesseurs
+
+	// Mutateurs
+
+	// Draw
+	draw(CImage* Image);
+
+	// Méthodes publiques Diverses
+
+private:
+	// Attributs/Variables membres
+	unsigned int m_rayon;
+
+	// Méthodes privées diverses 
 
 };

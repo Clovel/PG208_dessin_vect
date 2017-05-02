@@ -78,56 +78,15 @@ void Forme::setTransparence(unsigned int const &transparence)
 
 void Forme::setCouleur(string const &couleur)
 {
-    if (couleur == "ROUGE")
-    {
-        m_R = 255;
-        m_G = 0;
-        m_B = 0;
-    }
-    if (couleur == "BLEU")
-    {
-        m_R = 0;
-        m_G = 0;
-        m_B = 255;
-    }
-    if (couleur == "VERT")
-    {
-        m_R = 0;
-        m_G = 255;
-        m_B = 0;
-    }
-    if (couleur == "JAUNE")
-    {
-        m_R = 255;
-        m_G = 255;
-        m_B = 0;
-    }
-    if (couleur == "MARRON")
-    {
-        m_R = 167;
-        m_G = 85;
-        m_B = 2;
-    }
-    if (couleur == "BLANC")
-    {
-        m_R = 255;
-        m_G = 255;
-        m_B = 255;
-    }
-    if (couleur == "ROSE")
-    {
-        m_R = 253;
-        m_G = 108;
-        m_B = 158;
-    }
+    m_couleur = couleur;
 }
 
-void Forme::setCouleur(unsigned int &R, unsigned int &G, unsigned int &B)
+/*void Forme::setCouleur(unsigned int &R, unsigned int &G, unsigned int &B)
 {
     m_R = (R < 255) ? R : 255;
     m_G = (G < 255) ? G : 255;
     m_B = (B < 255) ? B : 255;
-}
+}*/
 
 // rajouter transparence
 
@@ -136,6 +95,7 @@ RGB_t Forme::getRGB(void) const
 {
     RGB_t rgb_buff;
     couleur = getCouleur();
+
     if (couleur == "ROUGE")
     {
         rgb_buff.r = 255;
