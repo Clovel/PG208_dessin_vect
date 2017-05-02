@@ -70,7 +70,6 @@ void Rectangle::calcul_lignes(unsigned int const &longueur, unsigned int const &
 	Coord c3(c1.getAbscisse() + longueur, c1.getOrdonnee() + hauteur);
 	Coord c4(c1.getAbscisse() + longueur, c1.getOrdonnee());
 
-	// ATTENTION, PAS D'ORDRE PARTICULIER
 	m_l1 = Ligne(c1, c2, getCouleur(), getTransparence());
 	m_l2 = Ligne(c2, c3, getCouleur(), getTransparence());
 	m_l3 = Ligne(c3, c4, getCouleur(), getTransparence());

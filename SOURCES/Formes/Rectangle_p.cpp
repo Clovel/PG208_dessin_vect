@@ -7,10 +7,10 @@
 // Rectangle_p.cpp
 // Rectangle class source file. 
 
-
+#include "../../HEADERS/Formes/Rectangle_p.h"
 
 //Con/Des
-Rectangle_P::Rectangle(Coord const c1, 
+Rectangle_p::Rectangle(Coord const c1, 
 	unsigned int const longueur, 
 	unsigned int const hauteur,  
 	std::string couleur, 
@@ -30,13 +30,13 @@ Rectangle_P::Rectangle(Coord const c1,
 
 // Afficheurs
 // Accesseurs
-Coord getCoord1(void);
+Coord Rectangle_p::getCoord1(void);
 
 // Mutateurs
-void setCoord1(Coord const &Coord1);
+void Rectangle_p::setCoord1(Coord const &Coord1);
 
 // Colorier
-void color(CImage *img)
+void Rectangle_p::color(CImage *img)
 {
 	setRGBcolor()
 int i, j;

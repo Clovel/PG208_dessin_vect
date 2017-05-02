@@ -20,7 +20,7 @@ Triangle::Triangle()
 }
 
 Triangle::Triangle(Ligne const l, Coord const c, 
-	Couleur const color, 
+	string const color, 
 	unsigned int const transparence)
 {
 	setCoord1(l.getCoord1());

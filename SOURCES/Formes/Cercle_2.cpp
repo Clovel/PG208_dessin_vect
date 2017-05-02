@@ -1,13 +1,7 @@
 // Camille Magnan & Clovis Durand
 // Dessin vectoriel
 
-#include <string>
-#include <cmath>
-#include <iostream>
-#include "../image/CImage.h"
-#include "../Others/Coord.h" 	
-#include "Forme.h"
-#include "Cercle_2.h"
+#include "../../HEADERS/Formes/Cercle_2.h"
 
 Cercle_2::Cercle_2(Coord c, int rayon, std::string couleur, int transparence)
 {

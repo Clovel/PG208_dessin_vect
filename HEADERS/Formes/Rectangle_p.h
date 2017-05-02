@@ -33,9 +33,6 @@ public :
 		std::string const couleur, 
 		unsigned int const transparence);
 
-	unsigned int const longueur;
-	unsigned int const hauteur;
-
 
 
 	// Afficheurs
@@ -56,7 +53,8 @@ public :
 
 
 private :
-
+	unsigned int const longueur;
+	unsigned int const hauteur;
 // Méthodes privées diverses
 
 

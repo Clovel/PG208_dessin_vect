@@ -45,12 +45,10 @@ public :
 
 private :
 	// Variables membres/attributs
-	// ATTENTION, PAS D'ORDRE PARTICULIER POUR LES LIGNES
 	Ligne m_l1;
 	Ligne m_l2;
 	Ligne m_l3;
 	Ligne m_l4;
-	std::string m_couleur;
 
 	// Méthodes privées diverses
 	void calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur);
