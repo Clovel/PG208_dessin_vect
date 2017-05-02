@@ -10,11 +10,6 @@
 #ifndef RECTANGLE_P_H
 #define RECTANGLE_P_H
 
-#include <string>
-#include <cmath>
-#include <iostream>
-#include "../image/CImage.h"
-#include "../Others/Coord.h" 	
 #include "Forme.h"
 
 class Rectangle_P : public Forme

@@ -14,8 +14,9 @@
 #include <cmath>
 #include <iostream>
 #include "../Others/Coord.h" 	// Point mathématique
-#include "../Others/Couleur.h" 	// Couleur
+#include "../image/CImage.h"	// Pour dessiner (sert pour les descendants de class Forme)
 
+// Sert a retourner 3 uInt en sortie d'une f°
 typedef struct RGB
 {
 	unsigned int r; 
@@ -57,6 +58,7 @@ private:
 
 #endif //FORME_H
 
+// Template [A SUPPRIMER AVANT LA FIN DU PROJET]
 /*
 	// Con/Destructeurs
 

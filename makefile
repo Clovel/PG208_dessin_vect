@@ -1,4 +1,11 @@
-# Camille Mangan & Clovis Durand
+# Clovis Durand & Camille Magnan
+# ENSEIRB-Matmeca, E2
+# 2017
+
+# PG208 - Projet Dessin Vectoriel
+
+# makefile
+# makefile compliation file. 
 
 TARGET 		= dessin_vect
 

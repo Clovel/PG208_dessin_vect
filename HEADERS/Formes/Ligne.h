@@ -4,7 +4,6 @@
 #ifndef LIGNE_H // Pour ne pas l'inclure plusieurs fois
 #define LIGNE_H
 
-#include "../image/CImage.h"
 #include "Forme.h"				// Pour heritage
 
 // ATTENTION, heritage pas encore implemente

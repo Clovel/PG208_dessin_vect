@@ -79,7 +79,7 @@ void Rectangle::calcul_lignes(unsigned int const &longueur, unsigned int const &
 }
 
 void Rectangle::calcul_lignes(int const &dist)
-// Pour rectangle de travers (avec angle)
+// Pour rectangle de biais (avec angle)
 {
 	int opp 		= getLigne1().getCoord2().getOrdonnee() - getLigne1().getCoord1().getOrdonnee();
 	int adj 		= getLigne1().getCoord2().getAbscisse() - getLigne1().getCoord1().getAbscisse();
@@ -99,7 +99,6 @@ void Rectangle::calcul_lignes(int const &dist)
 
 	m_l4 			= Ligne(c2, c3, getCouleur(), getTransparence());
 }
-
 
 // Opérateurs
 

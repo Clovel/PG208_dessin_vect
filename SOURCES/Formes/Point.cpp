@@ -1,32 +1,46 @@
-// Camille Magnan & Clovis Durand
-// Dessin vectoriel
+// Clovis Durand & Camille Magnan
+// ENSEIRB-Matmeca, E2
+// 2017
 
-#include <string>
-#include <cmath>
-#include <iostream>
-#include "../image/CImage.h"
-#include "../Others/Coord.h" 	
-#include "Forme.h"
-#include "Point.h"
+// PG208 - Projet Dessin Vectoriel
 
-Point::Point(Coord c, std::string couleur, int transparence)
-{
+// Point.cpp
+// Point class source file. 
 
-	m_transparence = transparence;
-	m_c1 = c;
-	m_rayon = rayon;
-	setRGBcouleur(couleur);
-	m_couleur = couleur;
+#include "../../HEADER/Formes/Point.h"
+using namespace std;
 
-}
-
+// Con/Destructeurs
 Point::Point()
 {	
+	setCouleur("BLANC")
+	setTransparence(0);
 }
 
-//CERCLE VIDE
-
-Point::dessiner(CImage *img)
+Point::Point(Coord c, 
+	string couleur, 
+	unsigned int transparence)
 {
-	img->drawPixel(getCoord1().getAbscisse(), getCoord1().getOrdonnee(), getRed(), getGreen(), getBlue());
+	setCoord1(c);
+	setTransparence(transparence);
+	setCouleur(couleur);
 }
+
+// Afficheurs
+
+// Accesseurs
+
+// Mutateurs
+
+// Draw
+Point::draw(CImage *img)
+{
+	RGB_t rgb = getRGB();
+	img->drawPixel(getCoord1().getAbscisse(), getCoord1().getOrdonnee(), rgb.r, rgb.g, rgb.b);
+}
+
+// Méthodes publiques Diverses
+
+// Attributs/Variables membres
+
+// Méthodes privées diverses
