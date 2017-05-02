@@ -22,6 +22,6 @@ public :
 	dessiner(CImage* Image);
 
 // attribus
-int m_rayon;
+unsigned int m_rayon;
 
 }
