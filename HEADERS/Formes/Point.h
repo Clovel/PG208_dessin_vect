@@ -1,8 +1,8 @@
 // Camille Magnan & Clovis Durand
 // Dessin vectoriel
 
-#ifndef CERCLE_2.H
-#define CERCLE_2.H
+#ifndef POINT.H
+#define POINT.H
 
 
 #include <string>
@@ -12,17 +12,13 @@
 #include "../Others/Coord.h" 
 #include "Forme.h"
 
-class Cercle : public Forme
+class Point : public Forme
 {
 public :
 
 // Constructeur
-	Cercle();
-	Cercle(Coord c, int rayon, std::string couleur, int transparence);
-	dessinerFull(CImage* Image);
+	Point();
+	Point(Coord c, std::string couleur, int transparence);
 	dessiner(CImage* Image);
-
-// attribus
-unsigned int m_rayon;
 
 };

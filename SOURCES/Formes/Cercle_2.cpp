@@ -9,7 +9,7 @@
 #include "Forme.h"
 #include "Cercle_2.h"
 
-Cercle_2::Cercle_2(Coord c; int rayon, std::string couleur, int transparence)
+Cercle_2::Cercle_2(Coord c, int rayon, std::string couleur, int transparence)
 {
 
 	m_transparence = transparence;
