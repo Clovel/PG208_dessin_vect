@@ -28,14 +28,14 @@ using namespace std;
 
 
 int main(int argc, char * argv[]) {
-    cout << "INFO : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
-    cout << "INFO : Number of arguments = " << argc << endl;
+    cout << "INFO  : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
+    cout << "INFO  : Number of arguments = " << argc << endl;
 
-    cout << "INFO : CBitmap object creation" << endl;
+    cout << "INFO  : CBitmap object creation" << endl;
     CBitmap *image = new CBitmap();
     string filename2 = "Sortie.bmp";
 
-    cout << "INFO : CImage pointer extraction" << endl;
+    cout << "INFO  : CImage pointer extraction" << endl;
     CImage   *img = new CImage(HEIGHT, WIDTH);
 
 
@@ -48,25 +48,27 @@ int main(int argc, char * argv[]) {
     }
 
     // Test dessin Ligne
-    Coord c1(300, 300), c2(500, 400), c3(900, 100);
+    Coord c1(300, 300);
+    Coord c2(500, 400);
+    Coord c3(800, 100);
     Ligne l(c1, c2, "BLANC", 0);
-    cout << "DRAW : Drawing [l]" << endl;
+    cout << "DRAW  : Drawing [l]" << endl;
     l.draw(img); // Dessine sur l'image
 
     Rectangle rect(c1, 100, 200, "ROSE", 0);
-    cout << "DRAW : Drawing [rect]" << endl;
+    cout << "DRAW  : Drawing [rect]" << endl;
     rect.draw(img);
 
     Rectangle rect2(l, 150, "BLEU", 0);
-    cout << "DRAW : Drawing [rect2]" << endl;
+    cout << "DRAW  : Drawing [rect2]" << endl;
     rect2.draw(img);
 
     Cercle circ(c1, 125, "BLANC", 0);
-    cout << "DRAW : Drawing [circ]" << endl;
+    cout << "DRAW  : Drawing [circ]" << endl;
     circ.draw(img);
 
-    Cercle_p circp(c3, 112, "MARRON", 0);
-    cout << "DRAW : Drawing [circp]" << endl;
+    Cercle_p circp(c3, 90, "BLANC", 0);
+    cout << "DRAW  : Drawing [circp]" << endl;
     circp.draw(img);
 
     //Rectangle_p rectp(c3, 30, 50, "blanc", 0);
@@ -77,7 +79,7 @@ int main(int argc, char * argv[]) {
     tri.draw(img);*/
 
     image->setImage(img); // Met l'image dessinée dans l'objet CBitmap
-    cout << "INFO : CBitmap image saving" << endl;
+    cout << "INFO  : CBitmap image saving" << endl;
     image->SaveBMP(filename2); // Enregistre le CBitmap
 
     return 1;

@@ -33,10 +33,12 @@ public:
 
 	// Méthodes publiques Diverses
 
-//private:
+private:
 	// Attributs/Variables membres
 
-	// Méthodes privées diverses 
+	// Méthodes privées diverses
+	void drawCircles(CImage *img, 
+		unsigned int rayon, int const x, int const y) const;
 };
 
 #endif // CERCLE_P_H

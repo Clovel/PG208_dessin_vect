@@ -19,6 +19,8 @@
 #define MIN( X, Y ) ((X < Y) ? X : Y)
 #define MAX( X, Y ) ((X > Y) ? X : Y)
 
+//#define DEBUG
+
 // Sert a retourner 3 uInt en sortie d'une f°
 typedef struct RGB
 {

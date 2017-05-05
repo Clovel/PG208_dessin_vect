@@ -31,7 +31,9 @@ OUTPUT		:= ./Sortie.bmp
 rm 		    = rm -f
 
 all: $(BINDIR)/$(TARGET)
-	./bin/dessin_vect; open $(OUTPUT)
+	./bin/dessin_vect; open $(OUTPUT); rm -f ./bin/dessin_vect
+
+comp: $(BINDIR)/$(TARGET)
 
 $(BINDIR)/$(TARGET): $(OBJECTS)
 	@$(LINKER) $@ $(OBJECTS) $(MAIN) $(LFLAGS)

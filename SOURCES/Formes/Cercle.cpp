@@ -48,7 +48,7 @@ void Cercle::draw(CImage *img) const
         {
             seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
 
-            if ((seg < (getRayon() + .5)) & (seg > (getRayon() - .5))) // .5 étant un epsilon
+            if ((seg < (getRayon() + 1)) & (seg > (getRayon() - 1))) // 1 étant un epsilon
                 img->drawPixel(i, j, getRGB().r, getRGB().g, getRGB().b);
         }
     }
