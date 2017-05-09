@@ -53,7 +53,7 @@ void Cercle_p::draw(CImage *img) const
     }
 }*/
 
-void Cercle_p::draw(CImage *img) const
+void Cercle_p::draw(CImage *img) 
 {
 	unsigned int rayon_init = getRayon();
 	int x 					= getCoord1().getAbscisse();
@@ -73,7 +73,7 @@ void Cercle_p::draw(CImage *img) const
 
 // Attributs/Variables membres
 
-void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int const y) const
+void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int const y) 
 {
     float seg;
     RGB_t RGB_temp;
@@ -100,7 +100,7 @@ void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int con
 
 	            if ((seg < (rayon + 1)) & (seg > (rayon - 1))) // 1 étant un epsilon
 	            {
-	                RGB_temp = applyTransparency(i, j);
+	                RGB_temp = applyTransparency(img,i, j);
                     img->drawPixel(i, j, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 	                #ifdef DEBUG
 	                	cout << "DEBUG : Drawing pixel at [" << i << ", " << j << "]\n";

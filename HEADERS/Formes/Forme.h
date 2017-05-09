@@ -50,7 +50,6 @@ public:
 	void setCouleur(std::string const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
-protected:
 	RGB_t applyTransparency(CImage *img, int const x, int const y);
 
 private:

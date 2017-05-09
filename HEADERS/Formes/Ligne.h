@@ -30,7 +30,7 @@ public:
 	void setCoords(Coord const &c1, Coord const &c2);
 
 	// Draw
-	void draw(CImage *img) const;
+	void draw(CImage *img);
 
 	// Méthodes publiques Diverses
 

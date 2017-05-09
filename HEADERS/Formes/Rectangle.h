@@ -44,7 +44,7 @@ public :
 	void setLigne4(Ligne const &l);
 
 	// Draw
-	void draw(CImage *img) const;
+	void draw(CImage *img);
 
 	// Méthodes publiques diverses
 

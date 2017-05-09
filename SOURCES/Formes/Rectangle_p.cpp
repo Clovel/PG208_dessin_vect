@@ -30,7 +30,7 @@ Rectangle_p::Rectangle_p(Coord const c1,
 // Mutateurs
 
 // Draw
-void Rectangle_p::draw(CImage *img) const
+void Rectangle_p::draw(CImage *img)
 {
 	int y0 = getCoord1().getOrdonnee();
 	int y1 = getLigne1().getCoord2().getOrdonnee();

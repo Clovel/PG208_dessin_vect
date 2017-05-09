@@ -82,7 +82,7 @@ void Rectangle::setLigne4(Ligne const &l)
 }
 
 // Draw -------------------------------------------------------------
-void Rectangle::draw(CImage *img) const
+void Rectangle::draw(CImage *img)
 {
 	m_l1.draw(img);
 	m_l2.draw(img);

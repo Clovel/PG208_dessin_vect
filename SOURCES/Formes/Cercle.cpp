@@ -35,7 +35,7 @@ void Cercle::setRayon(unsigned int const &rayon)
 }
 
 // Draw
-void Cercle::draw(CImage *img) const
+void Cercle::draw(CImage *img)
 {
     float seg;
 
@@ -52,7 +52,7 @@ void Cercle::draw(CImage *img) const
 
             if ((seg < (getRayon() + 1)) & (seg > (getRayon() - 1))) // 1 étant un epsilon
             {
-                RGB_temp = applyTransparency(i, j);
+                RGB_temp = applyTransparency(img, i, j);
                 img->drawPixel(i, j, RGB_temp.r, RGB_temp.g, RGB_temp.b);
             }
         }

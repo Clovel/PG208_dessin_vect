@@ -29,7 +29,7 @@ public:
 	// Mutateurs
 
 	// Draw
-	void draw(CImage *Image) const;
+	void draw(CImage *img);
 
 	// Méthodes publiques Diverses
 
@@ -38,7 +38,7 @@ private:
 
 	// Méthodes privées diverses
 	void drawCircles(CImage *img, 
-		unsigned int rayon, int const x, int const y) const;
+		unsigned int rayon, int const x, int const y) ;
 };
 
 #endif // CERCLE_P_H

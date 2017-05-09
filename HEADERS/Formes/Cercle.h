@@ -26,9 +26,9 @@ public :
 	void setRayon(unsigned int const &rayon);
 
 	// Draw
-	void draw(CImage *Image) const;
+	void draw(CImage *img);
 
-	void drawfull(CImage *Image) const;
+	//void drawfull(CImage *Image);
 
 	// Méthodes publiques Diverses
 

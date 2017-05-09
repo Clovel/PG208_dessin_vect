@@ -29,7 +29,7 @@ public:
 	// Mutateurs
 
 	// Draw
-	void draw(CImage *img) const;
+	void draw(CImage *img);
 
 	// Méthodes publiques Diverses
 
