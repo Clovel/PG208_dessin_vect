@@ -54,6 +54,26 @@ void Cercle::draw(CImage *img) const
     }
 }
 
+void Cercle::drawfull(CImage *img) const
+{
+    float seg;
+
+    int x = getCoord1().getAbscisse();
+    int y = getCoord1().getOrdonnee();
+
+    for(int i = MAX(x - getRayon(), 0); i < MIN(x + getRayon() + 1, img->size()); i++)
+    {
+        for (int j = MAX(y - getRayon(), 0); j < MIN(y + getRayon() + 1, img->size()); j++)
+        {
+            seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
+
+            if (seg < getRayon()) // .5 étant un epsilon
+                img->drawPixel(i, j, getRGB().r, getRGB().g, getRGB().b);
+        }
+    }
+}
+
+
 // Méthodes publiques Diverses
 
 // Attributs/Variables membres

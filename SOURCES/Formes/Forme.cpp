@@ -101,6 +101,32 @@ RGB_t Forme::getRGB(void) const
     return rgb_buff;
 }
 
+
+RGB_t Forme::applyTransparency(int const x, int const y)
+{
+    CPixel *p = getPixel(x, y);
+    int const r_old = p->Red();
+    int const g_old = p->Green();
+    int const b_old = p->Blue();
+
+    RGB_t color = getRGB();
+    unsigned int rtemp, gtemp, btemp;
+
+    rtemp = color.r;
+    gtemp = color.g;
+    btemp = color.b;
+
+    rtemp = (int)(100 - getTransparence() * r_old + getTransparence() * rtemp);
+    gtemp = (int)(100 - getTransparence() * g_old + getTransparence() * gtemp);
+    btemp = (int)(100 - getTransparence() * b_old + getTransparence() * btemp);
+
+    color.r = rtemp;
+    color.g = gtemp;
+    color.b = btemp;
+
+    return color;
+}
+
 // Mutateurs --------------------------------------------------------
 void Forme::setCoord1(Coord const &c1)
 {

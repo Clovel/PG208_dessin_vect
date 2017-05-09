@@ -28,6 +28,8 @@ public :
 	// Draw
 	void draw(CImage *Image) const;
 
+	void drawfull(CImage *Image) const;
+
 	// Méthodes publiques Diverses
 
 private:

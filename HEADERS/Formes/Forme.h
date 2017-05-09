@@ -50,7 +50,7 @@ public:
 	void setTransparence(unsigned int const &transparence);
 
 	// rajouter transparence
-
+	void RGB_t applyTransparency(int const x, int const y);
 
 private:
 	Coord m_c1;
