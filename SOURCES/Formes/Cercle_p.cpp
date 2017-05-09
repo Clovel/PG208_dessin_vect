@@ -76,6 +76,7 @@ void Cercle_p::draw(CImage *img) const
 void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int const y) const
 {
     float seg;
+    RGB_t RGB_temp;
 
     #ifdef DEBUG
     	cout << "DEBUG : Rayon de Cercle_p : " << rayon << endl;
@@ -99,7 +100,8 @@ void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int con
 
 	            if ((seg < (rayon + 1)) & (seg > (rayon - 1))) // 1 étant un epsilon
 	            {
-	                img->drawPixel(i, j, getRGB().r, getRGB().g, getRGB().b);
+	                RGB_temp = applyTransparency(i, j);
+                    img->drawPixel(i, j, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 	                #ifdef DEBUG
 	                	cout << "DEBUG : Drawing pixel at [" << i << ", " << j << "]\n";
 	                #endif // DEBUG

@@ -35,9 +35,10 @@ Point::Point(Coord const c,
 // Draw
 void Point::draw(CImage *img) const
 {
-	img->drawPixel(getCoord1().getAbscisse(), 
-		getCoord1().getOrdonnee(), 
-		getRGB().r, getRGB().g, getRGB().b);
+	RGB_t RGB_temp;
+	RGB_temp = applyTransparency(getCoord1().getAbscisse(), getCoord1().getOrdonnee());
+    img->drawPixel(getCoord1().getAbscisse(), 
+		getCoord1().getOrdonnee(), RGB_temp.r, RGB_temp.g, RGB_temp.b);
 }
 
 // Méthodes publiques Diverses

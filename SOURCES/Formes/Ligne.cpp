@@ -64,6 +64,7 @@ void Ligne::draw(CImage *img) const
 // Algorithme général optimisé de trace de segment de Bresenham
 {
 	int dx, dy; // Distances
+	RGB_t RGB_temp; // COULEUR
 
 	// Coordonnées 
 	int x0(getCoord1().getAbscisse());
@@ -76,18 +77,6 @@ void Ligne::draw(CImage *img) const
 		cout << "x1 = " << x1 << endl;
 		cout << "y1 = " << y1 << endl;
 	#endif //DEBUG
-
-
-	// RGB / Couleur
-	RGB_t rgb(getRGB());
-	unsigned int r(rgb.r);
-	unsigned int g(rgb.g);
-	unsigned int b(rgb.b);
-	#ifdef DEBUG
-		cout << "r = " << r << endl;
-		cout << "g = " << g << endl;
-		cout << "b = " << b << endl;
-	#endif // DEBUG
 
 	if ((dx = x1 - x0) != 0)
 	{
@@ -106,7 +95,8 @@ void Ligne::draw(CImage *img) const
 						dy *= 2;
 						while(true) // deplacements horizontaux
 						{
-							img->drawPixel(x0, y0, r, g, b); // Primitive poit le dessin du point
+							iRGB_temp = applyTransparency(x0,y0);
+               			    img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b); // Primitive poit le dessin du point
 							if((++x0) == x1)
 								break;
 							if((e -= dy) < 0)
@@ -124,7 +114,8 @@ void Ligne::draw(CImage *img) const
 						dx *= 2;
 						while(true) // Deplacements verticaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+                			img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							if((++y0) == y1)
 								break;
 							if((e -= dx) < 0)
@@ -146,7 +137,8 @@ void Ligne::draw(CImage *img) const
 						dy *= 2;
 						while(true) // deplacements horizontaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+                			img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							
 							if((++x0) == x1)
 								break;
@@ -165,7 +157,8 @@ void Ligne::draw(CImage *img) const
 						dx *= 2;
 						while(true) //deplacements verticaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+               				img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							if((--y0) == y1)
 								break;
 							if((e += dx) > 0)
@@ -181,7 +174,8 @@ void Ligne::draw(CImage *img) const
 			{
 				do
 				{
-					img->drawPixel(x0, y0, r, g, b);
+					RGB_temp = applyTransparency(x0,y0);
+               	    img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 				}while((++x0) != x1);
 			}
 		}
@@ -198,7 +192,8 @@ void Ligne::draw(CImage *img) const
 						dy *= 2;
 						while(true) // deplacements horizontalaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+                			img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							if((--x0) == x1)
 								break;
 							if ((e += dy) >= 0)
@@ -215,7 +210,8 @@ void Ligne::draw(CImage *img) const
 						dx *= 2;
 						while(true) // deplacements verticaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+               			    img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							if((++y0) == y1)
 								break;
 							if ((e += dx) <= 0)
@@ -236,7 +232,8 @@ void Ligne::draw(CImage *img) const
 						dy *= 2;
 						while(true) // deplacements horizontaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+               	 			img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							if((--x0) == x1)
 								break;
 							if((e -= dy) >= 0)
@@ -253,7 +250,8 @@ void Ligne::draw(CImage *img) const
 						dx *= 2;
 						while(true) // deplacements verticaux
 						{
-							img->drawPixel(x0, y0, r, g, b);
+							RGB_temp = applyTransparency(x0,y0);
+                			img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 							if(--y0 == y1)
 								break;
 							if((e -= dx) >= 0)
@@ -270,7 +268,8 @@ void Ligne::draw(CImage *img) const
 			{
 				do
 				{
-					img->drawPixel(x0, y0, r, g, b);
+					RGB_temp = applyTransparency(x0,y0);
+                	img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 				}while(--x0 != x1);
 			}
 		}
@@ -283,7 +282,8 @@ void Ligne::draw(CImage *img) const
 			{
 				do
 				{
-					img->drawPixel(x0, y0, r, g, b);
+					RGB_temp = applyTransparency(x0,y0);
+                	img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 				}while(++y0 != y1);
 			}
 			else // dy < 0 (et dx = 0)
@@ -291,12 +291,14 @@ void Ligne::draw(CImage *img) const
 			{
 				do
 				{
-					img->drawPixel(x0, y0, r, g, b);
+					RGB_temp = applyTransparency(x0,y0);
+                	img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 				}while(--y0 != y1);
 			}
 		}
 		else	// c'est un point, donc un simple pixel
-			img->drawPixel(x0, y0, r, g, b);
+			RGB_temp = applyTransparency(x0,y0);
+            img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b);
 	}
 }
 
