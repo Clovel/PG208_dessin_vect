@@ -23,10 +23,10 @@ public :
 		std::string const couleur, 
 		unsigned int const transparence); // Droit
 
-	Rectangle(Ligne const l1, 
+	/*Rectangle(Ligne const l1, 
 		int const dist, 
 		std::string const couleur, 
-		unsigned int const transparence); // De biais
+		unsigned int const transparence); // De biais*/
 
 
 	// Afficheurs

@@ -64,14 +64,14 @@ int main(int argc, char * argv[]) {
     cout << "[DRAW]  : Drawing [rect]" << endl;
     rect.draw(img);
 
-    // Test rectangle de biais                      // NOK
+/*    // Test rectangle de biais                      // NOK
     Rectangle rect2(l, 150, "BLEU", 0);
     cout << "[DRAW]  : Drawing [rect2]" << endl;
     cout << "[DEBUG] : l1 à 4 : " << rect2.getLigne1() << ", ";
     cout << rect2.getLigne2() << ", ";
     cout << rect2.getLigne3() << ", ";
     cout << rect2.getLigne4() << "\n";
-    rect2.draw(img);
+    rect2.draw(img);*/
 
     // Test cercle                                  // OK
     Cercle circ(c1, 125, "BLANC", 0);

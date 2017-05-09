@@ -42,5 +42,5 @@ $(BINDIR)/$(TARGET): $(OBJECTS)
 $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
-clean_exec:
-	rm -f ./bin/dessin_vect
+clean:
+	rm -f ./bin/dessin_vect; rm -f ./*.o
