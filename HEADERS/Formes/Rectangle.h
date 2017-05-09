@@ -65,7 +65,8 @@ private :
 	//      +-------------+
 	//           m_l4
 
-	// Méthodes privées diverses
+protected:
+	// Méthodes protégées diverses
 	void calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur);
 	void calcul_lignes(int const &dist);
 };

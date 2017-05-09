@@ -7,8 +7,21 @@
 // Rectangle_p.cpp
 
 #include "../../HEADERS/Formes/Rectangle_p.h"
+using namespace std;
 
 // Con/Destructeurs
+Rectangle_p::Rectangle_p(Coord const c1, 
+		unsigned int const longueur, 
+		unsigned int const hauteur,  
+		string const couleur, 
+		unsigned int const transparence): Rectangle(c1, 
+												longueur, 
+												hauteur,  
+												couleur, 
+												transparence)
+{
+
+}
 
 // Afficheurs
 

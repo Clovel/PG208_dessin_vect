@@ -92,7 +92,7 @@ void Rectangle::draw(CImage *img) const
 
 // Méthodes publiques diverses --------------------------------------
 
-// Méthodes privées diverses
+// Méthodes protégées diverses --------------------------------------
 void Rectangle::calcul_lignes(unsigned int const &longueur, unsigned int const &hauteur)
 {
 	Coord c1(getCoord1());

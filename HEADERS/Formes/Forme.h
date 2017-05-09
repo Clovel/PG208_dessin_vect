@@ -22,6 +22,7 @@
 //#define DEBUG
 
 // Sert a retourner 3 uInt en sortie d'une f°
+	// On ne peut retourner un tableau en C/C++
 typedef struct RGB
 {
 	unsigned int r; 

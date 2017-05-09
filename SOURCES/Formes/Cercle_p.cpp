@@ -108,4 +108,5 @@ void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int con
 	    }
 	    drawCircles(img, --rayon, x, y);
 	}
+    img->drawPixel(x, y, getRGB().r, getRGB().g, getRGB().b); // Dessiner le centre
 }
