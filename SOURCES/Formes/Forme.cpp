@@ -102,9 +102,9 @@ RGB_t Forme::getRGB(void) const
 }
 
 
-RGB_t Forme::applyTransparency(int const x, int const y)
+RGB_t Forme::applyTransparency(CImage *img, int const x, int const y)
 {
-    CPixel *p = getPixel(x, y);
+    CPixel *p = img->getPixel(x, y);
     int const r_old = p->Red();
     int const g_old = p->Green();
     int const b_old = p->Blue();

@@ -14,8 +14,8 @@
 using namespace std;
 
 // L'image doit etre carré d'apres le code de CImage fourni
-#define WIDTH  1000
-#define HEIGHT 1000
+#define WIDTH  768
+#define HEIGHT 768
 
 #include "./HEADERS/Format/CBitmap.h"
 #include "./HEADERS/Formes/Ligne.h"
@@ -36,9 +36,10 @@ int main(int argc, char * argv[]) {
     CBitmap *image = new CBitmap();
     string filename2 = "Sortie.bmp";
 
+    //Contstuction des formes
+
     cout << "INFO  : CImage pointer extraction" << endl;
     CImage   *img = new CImage(HEIGHT, WIDTH);
-
 
     // Dessine une ligne diagonale de (0, 0) a (200, 200), 
         // i.e. de en bas a gauche à en haut a droite
@@ -55,18 +56,18 @@ int main(int argc, char * argv[]) {
 
     // Test Ligne                                   // OK
     Ligne l(c1, c2, "BLANC", 0);
-    cout << "DRAW  : Drawing [l]" << endl;
+    cout << "[DRAW]  : Drawing [l]" << endl;
     l.draw(img); // Dessine sur l'image
 
     // Test rectangle droit                         // OK
     Rectangle rect(c1, 100, 200, "ROSE", 0);
-    cout << "DRAW  : Drawing [rect]" << endl;
+    cout << "[DRAW]  : Drawing [rect]" << endl;
     rect.draw(img);
 
     // Test rectangle de biais                      // NOK
     Rectangle rect2(l, 150, "BLEU", 0);
-    cout << "DRAW  : Drawing [rect2]" << endl;
-    cout << "DEBUG : l1 à 4 : " << rect2.getLigne1() << ", ";
+    cout << "[DRAW]  : Drawing [rect2]" << endl;
+    cout << "[DEBUG] : l1 à 4 : " << rect2.getLigne1() << ", ";
     cout << rect2.getLigne2() << ", ";
     cout << rect2.getLigne3() << ", ";
     cout << rect2.getLigne4() << "\n";
@@ -74,25 +75,25 @@ int main(int argc, char * argv[]) {
 
     // Test cercle                                  // OK
     Cercle circ(c1, 125, "BLANC", 0);
-    cout << "DRAW  : Drawing [circ]" << endl;
+    cout << "[DRAW]  : Drawing [circ]" << endl;
     circ.draw(img);
 
     // Test cercle plein                            // OK
     Cercle_p circp(c3, 90, "BLANC", 0);
-    cout << "DRAW  : Drawing [circp]" << endl;
+    cout << "[DRAW]  : Drawing [circp]" << endl;
     circp.draw(img);
 
-    // Test rectangle plein                         // OK
-    Rectangle_p rectp(c2, 30, 50, "BLANC", 0);
-    cout << "DRAW  : Drawing [rectp]" << endl;
-    cout << "DEBUG : l1 à 4 : " << rectp.getLigne1() << ", ";
+    // Test rectangle plein                         // NOK
+    Rectangle_p rectp(c1, 30, 50, "BLANC", 0);
+    cout << "[DRAW]  : Drawing [rectp]" << endl;
+    cout << "[DEBUG] : l1 à 4 : " << rectp.getLigne1() << ", ";
     cout << rectp.getLigne2() << ", ";
     cout << rectp.getLigne3() << ", ";
     cout << rectp.getLigne4() << "\n";
     rectp.draw(img);
 
     /*Triangle tri(l, c3, "ROUGE", 0);
-    cout << "DRAW : Drawing [tri]" << endl;
+    cout << "[DRAW] : Drawing [tri]" << endl;
     tri.draw(img);*/
 
     image->setImage(img); // Met l'image dessinée dans l'objet CBitmap

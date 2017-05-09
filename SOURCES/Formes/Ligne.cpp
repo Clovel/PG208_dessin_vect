@@ -95,7 +95,7 @@ void Ligne::draw(CImage *img) const
 						dy *= 2;
 						while(true) // deplacements horizontaux
 						{
-							iRGB_temp = applyTransparency(x0,y0);
+							RGB_temp = applyTransparency(x0,y0);
                			    img->drawPixel(x0, y0, RGB_temp.r, RGB_temp.g, RGB_temp.b); // Primitive poit le dessin du point
 							if((++x0) == x1)
 								break;

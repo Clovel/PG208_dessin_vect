@@ -50,8 +50,8 @@ public:
 	void setCouleur(std::string const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
-	// rajouter transparence
-	void RGB_t applyTransparency(int const x, int const y);
+protected:
+	RGB_t applyTransparency(CImage *img, int const x, int const y);
 
 private:
 	Coord m_c1;

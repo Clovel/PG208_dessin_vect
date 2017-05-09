@@ -32,17 +32,16 @@ Rectangle_p::Rectangle_p(Coord const c1,
 // Draw
 void Rectangle_p::draw(CImage *img) const
 {
-	int origine_y = getCoord1().getOrdonnee();
-	int origine_x = getCoord1().getAbscisse();
-	int longueur  = getLigne2().getCoord1().getOrdonnee() - origine_y;
-	int hauteur   = getLigne3().getCoord1().getAbscisse() - origine_x;
+	int y0 = getCoord1().getOrdonnee();
+	int y1 = getLigne1().getCoord2().getOrdonnee();
+	int x0 = getCoord1().getAbscisse();
+	int x1 = getLigne2().getCoord2().getAbscisse();
 
-	for(int i = origine_x; i >= longueur; i++)
+	for(int i = y0; i <= y1; i++)
 	{
-		for(int j = origine_y; j >= hauteur; j++)
-		{
-			img->drawPixel(i, j, getRGB().r, getRGB().g, getRGB().b);
-		}
+		Coord c1_temp(x0, i), c2_temp(x1, i);
+		Ligne l_temp(c1_temp, c2_temp, getCouleur(), getTransparence());
+		l_temp.draw(img);
 	}
 }
 

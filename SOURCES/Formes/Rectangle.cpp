@@ -24,7 +24,7 @@ Rectangle::Rectangle(Coord const c1,
 	calcul_lignes(longueur, hauteur);
 }
 
-Rectangle::Rectangle(Ligne const l1, 
+/*Rectangle::Rectangle(Ligne const l1, 
 	int const dist, 
 	string const couleur, 
 	unsigned int const transparence)
@@ -35,7 +35,7 @@ Rectangle::Rectangle(Ligne const l1,
 	setCouleur(couleur);
 	setTransparence(transparence);
 	calcul_lignes(dist);
-}
+}*/
 
 // Afficheurs -------------------------------------------------------
 

@@ -34,7 +34,7 @@ int CImage::size()
 CLigne* CImage::getLigne(int position)
 {
     if(position >= taille)
-        cout << "CImage::getLigne => trying to access " << position << " but the line has only " << taille << " data" << endl;
+        cout << "[ERROR]  : CImage::getLigne => trying to access " << position << " but the line has only " << taille << " data" << endl;
     return (position < taille)?liste[position]:NULL;
 }
 
