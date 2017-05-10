@@ -104,21 +104,24 @@ RGB_t Forme::getRGB(void) const
 
 RGB_t Forme::applyTransparency(CImage *img, int const x, int const y)
 {
+    // On recupère la couleur du pixel
     CPixel *p = img->getPixel(x, y);
-    int const r_old = p->Red();
-    int const g_old = p->Green();
-    int const b_old = p->Blue();
+    int const r_pixel = p->Red();
+    int const g_pixel = p->Green();
+    int const b_pixel = p->Blue();
+
+    // On déclare des variables temporaires pour le calcul des couleurs
+    unsigned int rtemp, gtemp, btemp;
 
     RGB_t color = getRGB();
-    unsigned int rtemp, gtemp, btemp;
 
     rtemp = color.r;
     gtemp = color.g;
     btemp = color.b;
 
-    rtemp = (int)(100 - getTransparence() * r_old + getTransparence() * rtemp);
-    gtemp = (int)(100 - getTransparence() * g_old + getTransparence() * gtemp);
-    btemp = (int)(100 - getTransparence() * b_old + getTransparence() * btemp);
+    rtemp = (int)(((100.0f - getTransparence()) * r_pixel + getTransparence() * rtemp)/100.0f);
+    gtemp = (int)(((100.0f - getTransparence()) * g_pixel + getTransparence() * gtemp)/100.0f);
+    btemp = (int)(((100.0f - getTransparence()) * b_pixel + getTransparence() * btemp)/100.0f);
 
     color.r = rtemp;
     color.g = gtemp;
