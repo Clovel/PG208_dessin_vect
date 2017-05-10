@@ -65,7 +65,7 @@ int main(int argc, char * argv[]) {
     rect.draw(img);
 
 /*    // Test rectangle de biais                      // NOK
-    Rectangle rect2(l, 150, "BLEU", 0);
+    Rectangle rect2(l, 150, "BLEU", 100);
     cout << "[DRAW]  : Drawing [rect2]" << endl;
     cout << "[DEBUG] : l1 à 4 : " << rect2.getLigne1() << ", ";
     cout << rect2.getLigne2() << ", ";
@@ -92,7 +92,7 @@ int main(int argc, char * argv[]) {
     cout << rectp.getLigne4() << "\n";
     rectp.draw(img);
 
-    /*Triangle tri(l, c3, "ROUGE", 0);
+    /*Triangle tri(l, c3, "ROUGE", 100);
     cout << "[DRAW] : Drawing [tri]" << endl;
     tri.draw(img);*/
 
