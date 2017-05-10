@@ -15,7 +15,7 @@ CFLAGS 		= -W -Wall -fopenmp
 
 LINKER 		= g++ -o
 
-LFLAGS 		= -Wall -I. -lm -lSDL2 -fopenmp
+LFLAGS 		= -Wall -I. -lm -fopenmp
 
 SRCDIR 		= SOURCES/*
 HDRDIR		= HEADERS/*
