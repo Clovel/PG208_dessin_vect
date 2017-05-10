@@ -11,7 +11,7 @@ TARGET 		= dessin_vect
 
 CC 		    = g++
 
-CFLAGS 		= -W -Wall -fopenmp
+CFLAGS 		= -O3 -W -Wall -fopenmp
 
 LINKER 		= g++ -o
 
