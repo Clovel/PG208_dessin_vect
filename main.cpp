@@ -55,17 +55,17 @@ int main(int argc, char * argv[]) {
     Coord c3(600, 100);
 
     // Test Ligne                                   // OK
-    Ligne l(c1, c2, "BLANC", 0);
+    Ligne l(c1, c2, "BLANC", 100);
     cout << "[DRAW]  : Drawing [l]" << endl;
     l.draw(img); // Dessine sur l'image
 
     // Test rectangle droit                         // OK
-    Rectangle rect(c1, 100, 200, "ROSE", 0);
+    Rectangle rect(c1, 100, 200, "ROSE", 100);
     cout << "[DRAW]  : Drawing [rect]" << endl;
     rect.draw(img);
 
 /*    // Test rectangle de biais                      // NOK
-    Rectangle rect2(l, 150, "BLEU", 0);
+    Rectangle rect2(l, 150, "BLEU", 100);
     cout << "[DRAW]  : Drawing [rect2]" << endl;
     cout << "[DEBUG] : l1 à 4 : " << rect2.getLigne1() << ", ";
     cout << rect2.getLigne2() << ", ";
@@ -74,17 +74,17 @@ int main(int argc, char * argv[]) {
     rect2.draw(img);*/
 
     // Test cercle                                  // OK
-    Cercle circ(c1, 125, "BLANC", 0);
+    Cercle circ(c1, 125, "BLANC", 100);
     cout << "[DRAW]  : Drawing [circ]" << endl;
     circ.draw(img);
 
     // Test cercle plein                            // OK
-    Cercle_p circp(c3, 90, "BLANC", 0);
+    Cercle_p circp(c3, 90, "BLANC", 100);
     cout << "[DRAW]  : Drawing [circp]" << endl;
     circp.draw(img);
 
     // Test rectangle plein                         // NOK
-    Rectangle_p rectp(c1, 30, 50, "BLANC", 0);
+    Rectangle_p rectp(c1, 30, 50, "BLANC", 100);
     cout << "[DRAW]  : Drawing [rectp]" << endl;
     cout << "[DEBUG] : l1 à 4 : " << rectp.getLigne1() << ", ";
     cout << rectp.getLigne2() << ", ";
@@ -92,7 +92,7 @@ int main(int argc, char * argv[]) {
     cout << rectp.getLigne4() << "\n";
     rectp.draw(img);
 
-    /*Triangle tri(l, c3, "ROUGE", 0);
+    /*Triangle tri(l, c3, "ROUGE", 100);
     cout << "[DRAW] : Drawing [tri]" << endl;
     tri.draw(img);*/
 
