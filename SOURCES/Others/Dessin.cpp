@@ -15,19 +15,19 @@ Dessin::Dessin()
 }
 
 // Accesseurs
-Forme Dessin::getForme(unsigned int const &index) const
+Forme *Dessin::getFormeFromIdx(unsigned int const &index) const
 {
 	return m_formes[index];
 }
 
-vector<Forme> Dessin::getVectorForme(void) const
+vector<Forme *> Dessin::getFormes(void) const
 {
 	return m_formes;
 }
 
 // Mutateurs
 
-void Dessin::setForme(Forme const &f, unsigned int const &index)
+void Dessin::setForme(Forme *f, unsigned int const &index)
 {
 	if(index < m_formes.size())
 		m_formes[index] = f;
@@ -39,7 +39,17 @@ void Dessin::setForme(Forme const &f, unsigned int const &index)
 	}
 }
 
-void Dessin::addForme(Forme const &f)
+void Dessin::addForme(Forme *f)
 {
 	m_formes.push_back(f);
+}
+
+// Fonctions publiques diverses
+
+void Dessin::drawAll(CImage *img) const
+{
+	for(unsigned int i = 0; i < getFormes().size(); i++)
+	{
+		getFormeFromIdx(i)->draw(img);
+	}
 }

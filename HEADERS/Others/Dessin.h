@@ -11,6 +11,7 @@
 #define DESSIN_H
 
 #include "../Formes/Forme.h"
+#include "../image/CImage.h"
 #include <vector>
 
 class Dessin
@@ -20,15 +21,20 @@ public:
 	Dessin();
 
 	// Accesseurs
-	Forme getForme(unsigned int const &index) const;
-	vector<Forme> getVectorForme(void) const;
+	Forme *getFormeFromIdx(unsigned int const &index) const;
+	vector<Forme *> getFormes(void) const;
 
 	// Mutateurs
-	void setForme(Forme const &f, unsigned int const &index);
-	void addForme(Forme const &f);
+	void setForme(Forme *f, unsigned int const &index);
+	void addForme(Forme *f);
+
+	// Fonctions publiques diverses
+	void drawAll(CImage *img) const;
 
 private:
-	vector<Forme> m_formes; // Va contenir toutes les formes
+	vector<Forme *> m_formes; // Va contenir toutes les formes
 };
 
 #endif // DESSIN_H
+
+// On utlise des "Formes *" car Forme est une classe dite "Absraite" 

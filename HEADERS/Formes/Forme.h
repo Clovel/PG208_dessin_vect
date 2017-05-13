@@ -50,7 +50,10 @@ public:
 	void setCouleur(std::string const &couleur);
 	void setTransparence(unsigned int const &transparence);
 
+	// Fonctions publiques diverses
+
 	RGB_t applyTransparency(CImage *img, int const x, int const y);
+	virtual void draw(CImage *img) = 0; // Declaration : ELLE EXISTE
 
 private:
 	Coord m_c1;
