@@ -328,12 +328,11 @@ Forme *Dessin::loadForme(string ligne)
 
 		return new Carre(c1, cote, colorstring, trsp); // carre;
 	}
-	/*
 	else if((infos[0] == "CARRES") ||
 		    (infos[0] == "CARREP"))
 	{
 		// La forme en question est un carre plein
-		// Ex : CARREP:100,100,150,ROUGE,0;
+		// Ex : CARREP:100,100,150,ROUGE,100;
 
 		#ifdef DEBUG
 			cout << "[DEBUG] : This shape is a full square\n";
@@ -356,7 +355,7 @@ Forme *Dessin::loadForme(string ligne)
 		Coord c1(x, y);
 
 		return new Carre_p(c1, cote, colorstring, trsp); // carrep;
-	}*/
+	}
 	else if(infos[0] == "TRIANGLE")
 	{
 		// La forme en question est un carre plein

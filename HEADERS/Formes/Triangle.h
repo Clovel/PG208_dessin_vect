@@ -11,7 +11,7 @@
 #define TRIANGLE_H
 
 #include "Ligne.h"
-//#define DEBUG
+#define DEBUG
 
 class Triangle : public Ligne
 {
