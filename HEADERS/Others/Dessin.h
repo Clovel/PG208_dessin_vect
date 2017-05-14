@@ -25,7 +25,8 @@
 #include "../Formes/Cercle.h"
 #include "../Formes/Cercle_p.h"
 #include "../Formes/Carre.h"
-//#include "../Others/Point.h"
+#include "../Formes/Carre_p.h"
+#include "../Formes/Point.h"
 
 #define DEBUG
 

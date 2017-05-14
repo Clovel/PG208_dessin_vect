@@ -2,16 +2,16 @@ To do list for project :
 
 Shapes : 
 
-Point				?		?
+Point				OK		DONE
 Ligne 				OK		DONE
 Rectangle 			OK		DONE
-Carré 				? 		?
+Carré 				OK 		DONE
 Cercle 				OK 		DONE
 RectangleS 			OK 		DONE
 CercleS 			OK 		DONE
 CarréS 				OK 		DONE
 Dessin 				OK 		DONE
-Triangle 			NOK		In Progress 					Optional
+Triangle 			OK		DONE 					Optional
 Load .vec files		OK 		Lignes vides non supportés
 
 Misc. : 

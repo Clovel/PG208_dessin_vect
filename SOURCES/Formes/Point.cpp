@@ -11,12 +11,6 @@
 using namespace std;
 
 // Con/Destructeurs
-Point::Point()
-{	
-	setCouleur("BLANC");
-	setTransparence(0);
-}
-
 Point::Point(Coord const c, 
 	string const couleur, 
 	unsigned int const transparence)
@@ -38,7 +32,8 @@ void Point::draw(CImage *img)
 	RGB_t RGB_temp;
 	RGB_temp = applyTransparency(img, getCoord1().getAbscisse(), getCoord1().getOrdonnee());
     img->drawPixel(getCoord1().getAbscisse(), 
-		getCoord1().getOrdonnee(), RGB_temp.r, RGB_temp.g, RGB_temp.b);
+		getCoord1().getOrdonnee(), 
+		RGB_temp.r, RGB_temp.g, RGB_temp.b);
 }
 
 // Méthodes publiques Diverses

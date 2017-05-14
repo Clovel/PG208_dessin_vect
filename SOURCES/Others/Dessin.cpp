@@ -320,7 +320,7 @@ Forme *Dessin::loadForme(string ligne)
 
 		int x 				= stoi(infos[1]);
 		int y 				= stoi(infos[2]);
-		int cote			= stoi(infos[3]);
+		unsigned int cote	= (unsigned int)stoi(infos[3]);
 		string colorstring 	= infos[4];
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
 
@@ -348,7 +348,7 @@ Forme *Dessin::loadForme(string ligne)
 
 		int x 				= stoi(infos[1]);
 		int y 				= stoi(infos[2]);
-		int cote			= stoi(infos[3]);
+		unsigned int cote	= (unsigned int)stoi(infos[3]);
 		string colorstring 	= infos[4];
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
 
@@ -388,6 +388,33 @@ Forme *Dessin::loadForme(string ligne)
 		Coord c3(x2, y2);
 
 		return new Triangle(l, c3); // carrep;
+	}
+	else if((infos[0] == "POINT") ||
+		    (infos[0] == "PIXEL"))
+	{
+		// La forme en question est un point
+		// Ex : PIXEL:100,100,ROUGE,100;
+
+		#ifdef DEBUG
+			cout << "[DEBUG] : This shape is a pixel/point\n";
+		#endif //DEBUG
+
+		// On récupère le reste des infos
+		for(unsigned int i = 0; i < 4; i++)
+		{ // Recuperation des 3 int
+			int pos = ligne.find(","); // Curseur
+			infos.push_back(ligne.substr(0, pos)); 
+			ligne = ligne.substr(pos + 1, taille - pos - 1);
+		}
+
+		int x 				= stoi(infos[1]);
+		int y 				= stoi(infos[2]);
+		string colorstring 	= infos[3];
+		unsigned int trsp 	= (unsigned int)stoi(infos[4]); 
+
+		Coord c1(x, y);
+
+		return new Point(c1, colorstring, trsp); // carrep;
 	}
 	else
 	{

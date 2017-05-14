@@ -16,7 +16,6 @@ class Point : public Forme
 {
 public :
 	// Con/Destructeurs
-	Point();
 	Point(Coord const c, 
 		std::string const couleur, 
 		unsigned int const transparence);

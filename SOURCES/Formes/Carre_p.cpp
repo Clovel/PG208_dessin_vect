@@ -7,7 +7,7 @@
 // Carre_p.cpp
 // Carre_p class source file. 
 
-#include "../../HEADERS/Formes/Carre.h"
+#include "../../HEADERS/Formes/Carre_p.h"
 using namespace std;
 
 Carre_p::Carre_p(Coord const c1, 
