@@ -8,6 +8,7 @@
 // Cercle_p class source file. 
 
 #include "../../HEADERS/Formes/Cercle_p.h"
+//#define DEBUG
 
 // Con/Destructeurs
 Cercle_p::Cercle_p()
@@ -55,6 +56,10 @@ void Cercle_p::draw(CImage *img) const
 
 void Cercle_p::draw(CImage *img) 
 {
+    #ifdef DEBUG
+            cout << "[DEBUG] : This shape is a full circle\n";
+    #endif //DEBUG
+
 	unsigned int rayon_init = getRayon();
 	int x 					= getCoord1().getAbscisse();
     int y 					= getCoord1().getOrdonnee();
@@ -78,33 +83,33 @@ void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int con
     float seg;
     RGB_t RGB_temp;
 
-    #ifdef DEBUG
+    /*#ifdef DEBUG
     	cout << "DEBUG : Rayon de Cercle_p : " << rayon << endl;
-    #endif // DEBUG
+    #endif // DEBUG*/
 
     if(rayon != 0)
     {
 	    for(int i = MAX(x - rayon, 0); i < MIN(x + rayon + 1, img->size()); i++)
 	    {
-	    	#ifdef DEBUG 
+	    	/*#ifdef DEBUG 
 	    		cout << "DEBUG : First loop, i = " << i << endl;
-	    	#endif // DEBUG
+	    	#endif // DEBUG*/
 	        for (int j = MAX(y - rayon, 0); j < MIN(y + rayon + 1, img->size()); j++)
 	        {
 	        	seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
 
-	        	#ifdef DEBUG 
+	        	/*#ifdef DEBUG 
 	    			cout << "DEBUG : Second loop, j = " << j << endl;
 	    			cout << "DEBUG : seg = " << seg << endl;
-	    		#endif // DEBUG
+	    		#endif // DEBUG*/
 
 	            if ((seg < (rayon + 1)) & (seg > (rayon - 1))) // 1 étant un epsilon
 	            {
 	                RGB_temp = applyTransparency(img,i, j);
                     img->drawPixel(i, j, RGB_temp.r, RGB_temp.g, RGB_temp.b);
-	                #ifdef DEBUG
+	                /*#ifdef DEBUG
 	                	cout << "DEBUG : Drawing pixel at [" << i << ", " << j << "]\n";
-	                #endif // DEBUG
+	                #endif // DEBUG*/
 	            }
 	        }
 	    }

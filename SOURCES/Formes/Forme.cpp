@@ -48,44 +48,44 @@ RGB_t Forme::getRGB(void) const
 {
     RGB_t rgb_buff;
     string const couleur = getCouleur();
-
-    if (couleur == "ROUGE")
+ 
+    if((couleur == "ROUGE") || (couleur == "RED"))
     {
         rgb_buff.r = 255;
         rgb_buff.g = 0;
         rgb_buff.b = 0;
     }
-    else if (couleur == "BLEU")
+    else if((couleur == "BLEU") || (couleur == "BLUE"))
     {
         rgb_buff.r = 0;
         rgb_buff.g = 0;
         rgb_buff.b = 255;
     }
-    else if (couleur == "VERT")
+    else if((couleur == "VERT") || (couleur == "GREEN"))
     {
         rgb_buff.r = 0;
         rgb_buff.g = 255;
         rgb_buff.b = 0;
     }
-    else if (couleur == "JAUNE")
+    else if((couleur == "JAUNE") || (couleur == "YELLOW"))
     {
         rgb_buff.r = 255;
         rgb_buff.g = 255;
         rgb_buff.b = 0;
     }
-    else if (couleur == "MARRON")
+    else if((couleur == "MARRON") || (couleur == "BROWN"))
     {
         rgb_buff.r = 167;
         rgb_buff.g = 85;
         rgb_buff.b = 2;
     }
-    else if (couleur == "BLANC")
+    else if((couleur == "BLANC") || (couleur == "WHITE"))
     {
         rgb_buff.r = 255;
         rgb_buff.g = 255;
         rgb_buff.b = 255;
     }
-    else if (couleur == "ROSE")
+    else if((couleur == "ROSE") || (couleur == "PINK"))
     {
         rgb_buff.r = 253;
         rgb_buff.g = 108;
@@ -93,6 +93,9 @@ RGB_t Forme::getRGB(void) const
     }
     else
     {
+        #ifdef DEBUG
+            cout << "[DEBUG] : Color not found, setting as white. \n";
+        #endif // DEBUG 
         rgb_buff.r = 255;
         rgb_buff.g = 255;
         rgb_buff.b = 255;

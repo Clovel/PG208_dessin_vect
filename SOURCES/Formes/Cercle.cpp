@@ -37,6 +37,11 @@ void Cercle::setRayon(unsigned int const &rayon)
 // Draw
 void Cercle::draw(CImage *img)
 {
+
+    #ifdef DEBUG
+            cout << "[DEBUG] : This shape is a simple circle\n";
+    #endif //DEBUG
+
     float seg;
 
     int x = getCoord1().getAbscisse();

@@ -32,6 +32,10 @@ Rectangle_p::Rectangle_p(Coord const c1,
 // Draw
 void Rectangle_p::draw(CImage *img)
 {
+	#ifdef DEBUG
+			cout << "[DEBUG] : This shape is a full rectangle\n";
+	#endif //DEBUG
+
 	int y0 = getCoord1().getOrdonnee();
 	int y1 = getLigne1().getCoord2().getOrdonnee();
 	int x0 = getCoord1().getAbscisse();

@@ -1,0 +1,22 @@
+To do list for project : 
+
+Shapes : 
+
+Point				?		?
+Ligne 				OK		DONE
+Rectangle 			OK		DONE
+Carré 				? 		?
+Cercle 				OK 		DONE
+RectangleS 			OK 		DONE
+CercleS 			OK 		DONE
+CarréS 				OK 		DONE
+Dessin 				OK 		In Progress
+Load .vec files		NOK 	Seg Fault on draw*
+
+Misc. : 
+
+Facteur d’échelle	?		In Progress
+Transparence		OK		DONE
+Size adapt			NOK 	Not Started
+README.md 			NOK		Not Started
+Gfx Inteface		NOK		Not Started

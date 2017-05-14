@@ -84,6 +84,10 @@ void Rectangle::setLigne4(Ligne const &l)
 // Draw -------------------------------------------------------------
 void Rectangle::draw(CImage *img)
 {
+	#ifdef DEBUG
+			cout << "[DEBUG] : This shape is a simple rectangle\n";
+	#endif //DEBUG
+
 	m_l1.draw(img);
 	m_l2.draw(img);
 	m_l3.draw(img);

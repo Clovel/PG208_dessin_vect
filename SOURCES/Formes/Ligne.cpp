@@ -63,6 +63,10 @@ void Ligne::setCoords(Coord const &c1, Coord const &c2)
 void Ligne::draw(CImage *img) 
 // Algorithme général optimisé de trace de segment de Bresenham
 {
+	#ifdef DEBUG
+			cout << "[DEBUG] : This shape is a line\n";
+	#endif //DEBUG
+
 	int dx, dy; // Distances
 	RGB_t RGB_temp; // COULEUR
 

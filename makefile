@@ -11,7 +11,7 @@ TARGET 		= dessin_vect
 
 CC 		    = g++
 
-CFLAGS 		= -O3 -W -Wall -fopenmp
+CFLAGS 		= -O3 -g -W -Wall -fopenmp
 
 LINKER 		= g++ -o
 
@@ -19,7 +19,7 @@ LFLAGS 		= -Wall -I. -lm -fopenmp
 
 SRCDIR 		= SOURCES/*
 HDRDIR		= HEADERS/*
-MAINDIR		= ./
+MAINDIR		= .
 OBJDIR 		= o_files
 BINDIR 		= bin
 
@@ -28,14 +28,17 @@ MAIN 		:= $(wildcard $(MAINDIR)/main.cpp)
 INCLUDES 	:= $(wildcard $(SRCDIR)/*.h)
 OBJECTS 	:= $(SOURCES:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)
 OUTPUT		:= ./Sortie.bmp
+TESTARG     := test
 rm 		    = rm -f
 
 all: $(BINDIR)/$(TARGET)
-	./bin/dessin_vect; open $(OUTPUT); rm -f ./bin/dessin_vect
+
+open: $(BINDIR)/$(TARGET)
+	./bin/dessin_vect $(TESTARG); open $(OUTPUT);
 
 comp: $(BINDIR)/$(TARGET)
 
-$(BINDIR)/$(TARGET): $(OBJECTS)
+$(BINDIR)/$(TARGET): $(OBJECTS) $(MAIN)
 	@$(LINKER) $@ $(OBJECTS) $(MAIN) $(LFLAGS)
 
 
@@ -43,4 +46,4 @@ $(OBJECTS): $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f ./bin/dessin_vect; rm -f ./*.o
+	rm ./bin/dessin_vect; rm ./*.o; rm $(OUTPUT)
