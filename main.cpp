@@ -26,7 +26,7 @@ using namespace std;
 #include "./HEADERS/Formes/Triangle.h"
 #include "./HEADERS/Formes/Cercle.h"
 #include "./HEADERS/Formes/Cercle_p.h"
-//#include "./HEADERS/Formes/Carre.h"
+#include "./HEADERS/Formes/Carre.h"
 #include "./HEADERS/Others/Dessin.h"
 //#include "./HEADERS/Others/Point.h"
 

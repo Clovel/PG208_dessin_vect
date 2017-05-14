@@ -301,17 +301,17 @@ Forme *Dessin::loadForme(string ligne)
 
 		return new Rectangle_p(c1, longueur, hauteur, colorstring, trsp); //rectp;
 	}
-	/*else if(infos[0] == "CARRE")
+	else if(infos[0] == "CARRE")
 	{
 		// La forme en question est un carre simple
-		// Ex : CARRE:100,100,150,ROUGE,0;
+		// Ex : CARRE:100,100,150,ROUGE,100;
 
 		#ifdef DEBUG
 			cout << "[DEBUG] : This shape is a simple square\n";
 		#endif //DEBUG
 
 		// On récupère le reste des infos
-		for(unsigned int i = 0; i < 6; i++)
+		for(unsigned int i = 0; i < 5; i++)
 		{ // Recuperation des 3 int
 			int pos = ligne.find(","); // Curseur
 			infos.push_back(ligne.substr(0, pos)); 
@@ -328,6 +328,7 @@ Forme *Dessin::loadForme(string ligne)
 
 		return new Carre(c1, cote, colorstring, trsp); // carre;
 	}
+	/*
 	else if((infos[0] == "CARRES") ||
 		    (infos[0] == "CARREP"))
 	{
