@@ -37,7 +37,6 @@ int main(int argc, char *argv[])
 	if(argc == 1)
 	{
 		cerr << "[ERROR]  : Not enough arguments\n";
-		// Intructions
 	}
 	else
 	{
@@ -50,7 +49,7 @@ int main(int argc, char *argv[])
 
 			cout << "[INFO]  : CBitmap object creation" << endl;
 			CBitmap *image = new CBitmap();
-			string filename2 = "Sortie.bmp";
+			string filename2 = "Sortie_test.bmp";
 
 			cout << "[INFO]  : CImage pointer extraction" << endl;
 			CImage   *img = new CImage(HEIGHT, WIDTH);
@@ -128,7 +127,7 @@ int main(int argc, char *argv[])
 
 			return 1;
 		}
-		else // Un nom de fichier a ete precise.   
+		else // Un nom de fichier a ete precise.
 		{
 			cout << "[INFO]  : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
 			cout << "[INFO]  : Number of arguments = " << argc << endl;

@@ -19,9 +19,7 @@ Dessin::~Dessin()
 	// Destructeur
 	// Parcourir tout les elements du vecteur et free. delete
 	for(unsigned int i = 0; i < m_formes.size(); i++)
-	{
 		delete m_formes[i];
-	}
 	m_formes.clear();
 }
 
