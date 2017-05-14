@@ -159,13 +159,6 @@ Forme *Dessin::loadForme(string ligne)
 
 		Coord c1(x, y);
 
-		// Déclaration du cercle plein
-		//Cercle_p *circp = new Cercle_p(c1, r, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &circp << endl;
-		//#endif // DEBUG
-
 		return new Cercle_p(c1, r, colorstring, trsp); // circp; //On retourne l'adresse de l'objet
 	}
 	else if((infos[0] == "DISQUE") ||
@@ -193,13 +186,6 @@ Forme *Dessin::loadForme(string ligne)
 		unsigned int trsp  = (unsigned int)stoi(infos[5]);
 
 		Coord c1(x, y);
-
-		// Déclaration du cercle plein
-		//Cercle *circ = new Cercle(c1, r, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &circ << endl;
-		//#endif // DEBUG
 
 		return new Cercle(c1, r, colorstring, trsp); // circ; //On retourne l'adresse de l'objet
 	}
@@ -230,12 +216,6 @@ Forme *Dessin::loadForme(string ligne)
 		Coord c1(x0, y0);
 		Coord c2(x1, y1);
 
-		//Ligne *l = new Ligne(c1, c2, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &l << endl;
-		//#endif // DEBUG
-
 		return new Ligne(c1, c2, colorstring, trsp); // l;
 	}
 	/*else if(infos[0] == "POINT")
@@ -261,12 +241,6 @@ Forme *Dessin::loadForme(string ligne)
 		unsigned int trsp 	= (unsigned int)stoi(infos[4]);
 
 		Coord c1(x, y);
-
-		//Point *p = new Point(c1, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &p << endl;
-		//#endif // DEBUG
 
 		return new Point(c1, colorstring, trsp); // p;
 	}*/
@@ -295,12 +269,6 @@ Forme *Dessin::loadForme(string ligne)
 		unsigned int trsp 	= (unsigned int)stoi(infos[6]); 
 
 		Coord c1(x, y);
-
-		//Rectangle *rect = new Rectangle(c1, longueur, hauteur, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &rect << endl;
-		//#endif // DEBUG
 
 		return new Rectangle(c1, longueur, hauteur, colorstring, trsp); // rect;
 	}
@@ -331,12 +299,6 @@ Forme *Dessin::loadForme(string ligne)
 
 		Coord c1(x, y);
 
-		//Rectangle_p *rectp = new Rectangle_p(c1, longueur, hauteur, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &rectp << endl;
-		//#endif // DEBUG
-
 		return new Rectangle_p(c1, longueur, hauteur, colorstring, trsp); //rectp;
 	}
 	/*else if(infos[0] == "CARRE")
@@ -363,12 +325,6 @@ Forme *Dessin::loadForme(string ligne)
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
 
 		Coord c1(x, y);
-
-		//Carre *carre = new Carre(c1, cote, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &carre << endl;
-		//#endif // DEBUG
 
 		return new Carre(c1, cote, colorstring, trsp); // carre;
 	}
@@ -398,14 +354,41 @@ Forme *Dessin::loadForme(string ligne)
 
 		Coord c1(x, y);
 
-		//Carre_p *carrep = new Carre_p(c1, cote, colorstring, trsp);
-
-		//#ifdef DEBUG
-		//	cout << "[DEBUG] : pointer address of shape is : " << &carrep << endl;
-		//#endif // DEBUG
-
 		return new Carre_p(c1, cote, colorstring, trsp); // carrep;
 	}*/
+	else if(infos[0] == "TRIANGLE")
+	{
+		// La forme en question est un carre plein
+		// Ex : TRIANGLE:100,100,200,200,100,300,BLUE,100
+
+		#ifdef DEBUG
+			cout << "[DEBUG] : This shape is a simple triangle\n";
+		#endif //DEBUG
+
+		// On récupère le reste des infos
+		for(unsigned int i = 0; i < 8; i++)
+		{ // Recuperation des 3 int
+			int pos = ligne.find(","); // Curseur
+			infos.push_back(ligne.substr(0, pos)); 
+			ligne = ligne.substr(pos + 1, taille - pos - 1);
+		}
+
+		int x0 				= stoi(infos[1]);
+		int y0 				= stoi(infos[2]);
+		int x1 				= stoi(infos[3]);
+		int y1 				= stoi(infos[4]);
+		int x2 				= stoi(infos[5]);
+		int y2 				= stoi(infos[6]);
+		string colorstring 	= infos[7];
+		unsigned int trsp 	= (unsigned int)stoi(infos[8]); 
+
+		Coord c1(x0, y0);
+		Coord c2(x1, y1);
+		Ligne l(c1, c2, colorstring, trsp);
+		Coord c3(x2, y2);
+
+		return new Triangle(l, c3); // carrep;
+	}
 	else
 	{
 		// Mauvaise entrée, on ne fait rien ?

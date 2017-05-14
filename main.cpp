@@ -23,7 +23,7 @@ using namespace std;
 #include "./HEADERS/Formes/Ligne.h"
 #include "./HEADERS/Formes/Rectangle.h"
 #include "./HEADERS/Formes/Rectangle_p.h"
-//#include "./HEADERS/Formes/Triangle.h"
+#include "./HEADERS/Formes/Triangle.h"
 #include "./HEADERS/Formes/Cercle.h"
 #include "./HEADERS/Formes/Cercle_p.h"
 //#include "./HEADERS/Formes/Carre.h"

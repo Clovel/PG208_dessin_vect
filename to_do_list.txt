@@ -11,6 +11,7 @@ RectangleS 			OK 		DONE
 CercleS 			OK 		DONE
 CarréS 				OK 		DONE
 Dessin 				OK 		DONE
+Triangle 			NOK		In Progress 					Optional
 Load .vec files		OK 		Lignes vides non supportés
 
 Misc. : 

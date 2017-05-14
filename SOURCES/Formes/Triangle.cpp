@@ -10,24 +10,14 @@
 #include "../../HEADERS/Formes/Triangle.h"
 
 // Constructeurs
-Triangle::Triangle()
-{
-	Coord c;
-	setCoord1(c);
-	setCoord2(c);
-	setCoord3(c);
-	// Trois points confondus
-}
-
-Triangle::Triangle(Ligne const l, Coord const c, 
-	string const color, 
-	unsigned int const transparence)
+Triangle::Triangle(Ligne const l, 
+	Coord const c)
 {
 	setCoord1(l.getCoord1());
 	setCoord2(l.getCoord2());
 	setCoord3(c);
-	setCouleur(color);
-	setTransparence(transparence);
+	setCouleur(l.getCouleur());
+	setTransparence(l.getTransparence());
 }
 
 // Afficheurs
@@ -45,11 +35,17 @@ void Triangle::setCoord3(Coord const &c)
 }
 
 // Draw
-void Triangle::draw(CImage *img) const
+void Triangle::draw(CImage *img)
 {
 	Ligne l1(getCoord1(), getCoord2(), getCouleur(), getTransparence());
 	Ligne l2(getCoord1(), getCoord3(), getCouleur(), getTransparence());
 	Ligne l3(getCoord2(), getCoord3(), getCouleur(), getTransparence());
+
+	#ifdef DEBUG
+			cout << "[DEBUG] : l1 : " << l1 << endl;
+			cout << "[DEBUG] : l2 : " << l2 << endl;
+			cout << "[DEBUG] : l3 : " << l3 << endl;
+	#endif //DEBUG
 
 	l1.draw(img);
 	l2.draw(img);
