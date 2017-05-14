@@ -10,8 +10,9 @@ Cercle 				OK 		DONE
 RectangleS 			OK 		DONE
 CercleS 			OK 		DONE
 CarréS 				OK 		DONE
-Dessin 				OK 		In Progress
-Load .vec files		NOK 	Seg Fault on draw*
+Dessin 				OK 		DONE
+Triangle 			NOK		In Progress 					Optional
+Load .vec files		OK 		Lignes vides non supportés
 
 Misc. : 
 

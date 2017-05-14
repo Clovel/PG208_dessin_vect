@@ -1,3 +1,12 @@
+// Clovis Durand & Camille Magnan
+// ENSEIRB-Matmeca, E2
+// 2017
+
+// PG208 - Projet Dessin Vectoriel
+
+// Carre.cpp
+// Carre class header file. 
+
 #include "../../HEADERS/Formes/Carre.h"
 using namespace std;
 

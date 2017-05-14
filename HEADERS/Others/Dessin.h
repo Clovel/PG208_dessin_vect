@@ -21,10 +21,10 @@
 #include "../Formes/Ligne.h"
 #include "../Formes/Rectangle.h"
 #include "../Formes/Rectangle_p.h"
-//#include "../Formes/Triangle.h"
+#include "../Formes/Triangle.h"
 #include "../Formes/Cercle.h"
 #include "../Formes/Cercle_p.h"
-//#include "../Formes/Carre.h"
+#include "../Formes/Carre.h"
 //#include "../Others/Point.h"
 
 #define DEBUG

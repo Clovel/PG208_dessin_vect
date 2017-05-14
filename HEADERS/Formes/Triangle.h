@@ -11,15 +11,14 @@
 #define TRIANGLE_H
 
 #include "Ligne.h"
+//#define DEBUG
 
 class Triangle : public Ligne
 {
 public:
 	// Constructeurs
-	Triangle();
-	Triangle(Ligne const l, Coord const c, 
-		Couleur const color, 
-		unsigned int const transparence);
+	Triangle(Ligne const l, 
+		Coord const c);
 
 	// Afficheurs
 
@@ -30,7 +29,7 @@ public:
 	void setCoord3(Coord const &c);
 
 	// Draw
-	void draw(CImage *img) const;
+	void draw(CImage *img);
 
 	// Méthodes publiques diverses
 
