@@ -19,5 +19,6 @@ Misc. :
 Facteur d’échelle	?		In Progress
 Transparence		OK		DONE
 Size adapt			OK	 	DONE
-README.md 			NOK		Not Started
-Gfx Inteface		NOK		Not Started
+README.md 			NOK		Not Started				Optional
+Gfx Inteface		NOK		Not Started				Optional
+Rapport 			NOK		In Progress

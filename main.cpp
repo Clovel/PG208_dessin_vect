@@ -20,17 +20,17 @@ using namespace std;
 #define WIDTH  768
 #define HEIGHT 768
 
-#include "./HEADERS/Format/CBitmap.h"
-#include "./HEADERS/Formes/Ligne.h"
-#include "./HEADERS/Formes/Rectangle.h"
-#include "./HEADERS/Formes/Rectangle_p.h"
-#include "./HEADERS/Formes/Triangle.h"
-#include "./HEADERS/Formes/Cercle.h"
-#include "./HEADERS/Formes/Cercle_p.h"
-#include "./HEADERS/Formes/Carre.h"
-#include "./HEADERS/Formes/Carre_p.h"
-#include "./HEADERS/Others/Dessin.h"
-#include "./HEADERS/Formes/Point.h"
+#include "HEADERS/Format/CBitmap.h"
+#include "HEADERS/Formes/Ligne.h"
+#include "HEADERS/Formes/Rectangle.h"
+#include "HEADERS/Formes/Rectangle_p.h"
+#include "HEADERS/Formes/Triangle.h"
+#include "HEADERS/Formes/Cercle.h"
+#include "HEADERS/Formes/Cercle_p.h"
+#include "HEADERS/Formes/Carre.h"
+#include "HEADERS/Formes/Carre_p.h"
+#include "HEADERS/Others/Dessin.h"
+#include "HEADERS/Formes/Point.h"
 
 
 
