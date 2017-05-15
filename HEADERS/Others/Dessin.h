@@ -42,12 +42,14 @@ public:
 	vector<Forme *> getFormes(void) const;
 	vector<unsigned int> getH(void) const;
 	vector<unsigned int> getL(void) const;
+	float getScalingRatio(void) const;
 
 	// Mutateurs
 	void setForme(Forme *f, unsigned int const &index);
 	void addForme(Forme *f);
 	void addH(unsigned int const &a);
 	void addL(unsigned int const &a);
+	void setScalingRatio(float const &scl);
 
 	// Fonction Load depuis un fichier .vec
 	bool loadVec(string const &filename);
@@ -65,6 +67,10 @@ private:
 
 	// Pour la largeur
 	vector<unsigned int> m_l;
+
+	// Facteur d'échelle
+	float m_scalingRatio;
+
 
 
 	// Fonctions privées diverses

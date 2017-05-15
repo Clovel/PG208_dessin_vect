@@ -49,9 +49,9 @@ void Cercle::draw(CImage *img)
 
     RGB_t RGB_temp;
 
-    for(unsigned int i = MAX(x - getRayon(), 0); i < (unsigned int)x + getRayon() + 1; i++)
+    for(int i = MAX(x - (int)getRayon(), 0); i < x + (int)getRayon() + 1; i++)
     {
-        for (unsigned int j = MAX(y - getRayon(),0); j < (unsigned int)y + getRayon() + 1; j++)
+        for (int j = MAX(y - (int)getRayon(),0); j < y + (int)getRayon() + 1; j++)
         {
             seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
 

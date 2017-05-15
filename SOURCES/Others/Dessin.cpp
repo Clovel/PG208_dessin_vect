@@ -9,7 +9,7 @@
 
 #include "../../HEADERS/Others/Dessin.h"
 
-Dessin::Dessin()
+Dessin::Dessin(): m_scalingRatio(1)
 {
 	// Constructeur
 }
@@ -47,6 +47,11 @@ vector<unsigned int> Dessin::getL(void) const
 	return m_l;
 }
 
+float Dessin::getScalingRatio(void) const
+{
+	return m_scalingRatio;
+}
+
 // Mutateurs
 
 void Dessin::setForme(Forme *f, unsigned int const &index)
@@ -74,6 +79,11 @@ void Dessin::addH(unsigned int const &a)
 void Dessin::addL(unsigned int const &a)
 {
 	m_l.push_back(a);
+}
+
+void Dessin::setScalingRatio(float const &scl)
+{
+	m_scalingRatio = scl;
 }
 
 // Fonction Load depuis un fichier .vec
@@ -198,9 +208,9 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x              = stoi(infos[1]); // x : abscisse
-		int y              = stoi(infos[2]); // y : ordonnée
-		unsigned int r     = (unsigned int)stoi(infos[3]); // r : rayon
+		int x              = (int)(stoi(infos[1]) * getScalingRatio()); // x : abscisse
+		int y              = (int)(stoi(infos[2]) * getScalingRatio()); // y : ordonnée
+		unsigned int r     = (unsigned int)(stoi(infos[3]) * getScalingRatio()); // r : rayon
 		string colorstring = infos[4]; // couleur sous forme de string
 		unsigned int trsp  = (unsigned int)stoi(infos[5]);
 
@@ -232,9 +242,9 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x              = stoi(infos[1]); // x : abscisse
-		int y              = stoi(infos[2]); // y : ordonnée
-		unsigned int r     = (unsigned int)stoi(infos[3]); // r : rayon
+		int x              = (int)(stoi(infos[1]) * getScalingRatio()); // x : abscisse
+		int y              = (int)(stoi(infos[2]) * getScalingRatio()); // y : ordonnée
+		unsigned int r     = (unsigned int)(stoi(infos[3]) * getScalingRatio()); // r : rayon
 		string colorstring = infos[4]; // couleur sous forme de string
 		unsigned int trsp  = (unsigned int)stoi(infos[5]);
 
@@ -264,10 +274,10 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x0 				= stoi(infos[1]);
-		int y0 				= stoi(infos[2]);
-		int x1 				= stoi(infos[3]);
-		int y1 				= stoi(infos[4]);
+		int x0 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y0 				= (int)(stoi(infos[2]) * getScalingRatio());
+		int x1 				= (int)(stoi(infos[3]) * getScalingRatio());
+		int y1 				= (int)(stoi(infos[4]) * getScalingRatio());
 		string colorstring 	= infos[5];
 		unsigned int trsp 	= (unsigned int)stoi(infos[6]);
 
@@ -298,10 +308,10 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x 				= stoi(infos[1]);
-		int y 				= stoi(infos[2]);
-		int longueur		= stoi(infos[3]);
-		int hauteur			= stoi(infos[4]);
+		int x 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y 				= (int)(stoi(infos[2]) * getScalingRatio());
+		int longueur		= (int)(stoi(infos[3]) * getScalingRatio());
+		int hauteur			= (int)(stoi(infos[4]) * getScalingRatio());
 		string colorstring 	= infos[5];
 		unsigned int trsp 	= (unsigned int)stoi(infos[6]); 
 
@@ -332,10 +342,10 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x 				= stoi(infos[1]);
-		int y 				= stoi(infos[2]);
-		int longueur		= stoi(infos[3]);
-		int hauteur			= stoi(infos[4]);
+		int x 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y 				= (int)(stoi(infos[2]) * getScalingRatio());
+		int longueur		= (int)(stoi(infos[3]) * getScalingRatio());
+		int hauteur			= (int)(stoi(infos[4]) * getScalingRatio());
 		string colorstring 	= infos[5];
 		unsigned int trsp 	= (unsigned int)stoi(infos[6]); 
 
@@ -365,9 +375,9 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x 				= stoi(infos[1]);
-		int y 				= stoi(infos[2]);
-		unsigned int cote	= (unsigned int)stoi(infos[3]);
+		int x 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y 				= (int)(stoi(infos[2]) * getScalingRatio());
+		unsigned int cote	= (unsigned int)(stoi(infos[3]) * getScalingRatio());
 		string colorstring 	= infos[4];
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
 
@@ -398,9 +408,9 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x 				= stoi(infos[1]);
-		int y 				= stoi(infos[2]);
-		unsigned int cote	= (unsigned int)stoi(infos[3]);
+		int x 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y 				= (int)(stoi(infos[2]) * getScalingRatio());
+		unsigned int cote	= (unsigned int)(stoi(infos[3]) * getScalingRatio());
 		string colorstring 	= infos[4];
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
 
@@ -430,12 +440,12 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x0 				= stoi(infos[1]);
-		int y0 				= stoi(infos[2]);
-		int x1 				= stoi(infos[3]);
-		int y1 				= stoi(infos[4]);
-		int x2 				= stoi(infos[5]);
-		int y2 				= stoi(infos[6]);
+		int x0 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y0 				= (int)(stoi(infos[2]) * getScalingRatio());
+		int x1 				= (int)(stoi(infos[3]) * getScalingRatio());
+		int y1 				= (int)(stoi(infos[4]) * getScalingRatio());
+		int x2 				= (int)(stoi(infos[5]) * getScalingRatio());
+		int y2 				= (int)(stoi(infos[6]) * getScalingRatio());
 		string colorstring 	= infos[7];
 		unsigned int trsp 	= (unsigned int)stoi(infos[8]); 
 
@@ -469,8 +479,8 @@ Forme *Dessin::loadForme(string ligne)
 			ligne = ligne.substr(pos + 1, taille - pos - 1);
 		}
 
-		int x 				= stoi(infos[1]);
-		int y 				= stoi(infos[2]);
+		int x 				= (int)(stoi(infos[1]) * getScalingRatio());
+		int y 				= (int)(stoi(infos[2]) * getScalingRatio());
 		string colorstring 	= infos[3];
 		unsigned int trsp 	= (unsigned int)stoi(infos[4]); 
 

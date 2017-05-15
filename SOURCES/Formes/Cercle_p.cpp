@@ -71,12 +71,12 @@ void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int con
 
     if(rayon != 0)
     {
-	    for(unsigned int i = MAX(x - rayon, 0); i < (unsigned int)x + rayon + 1; i++)
+	    for(int i = MAX(x - (int)rayon, 0); i < x + (int)rayon + 1; i++)
 	    {
 	    	/*#ifdef DEBUG 
 	    		cout << "DEBUG : First loop, i = " << i << endl;
 	    	#endif // DEBUG*/
-	        for (unsigned int j = MAX(y - rayon, 0); j < (unsigned int)y + rayon + 1; j++)
+	        for (int j = MAX(y - (int)rayon, 0); j < y + (int)rayon + 1; j++)
 	        {
 	        	seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
 

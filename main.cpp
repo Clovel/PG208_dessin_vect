@@ -13,6 +13,7 @@
 #include <vector>
 #include <string> 		// C++ string
 #include <cstring> 		// C string (for strcmp)
+#include <cstdlib> 		// C atof to convert argv (char const *) to float
 using namespace std;
 
 // L'image doit etre carré d'apres le code de CImage fourni
@@ -135,6 +136,11 @@ int main(int argc, char *argv[])
 			Dessin dessin; // Construit le dessin
 
 			string filename = argv[1]; // On recupere le nom de fichier
+
+			if(argc == 3)
+				dessin.setScalingRatio(atof(argv[2]));
+			else
+				dessin.setScalingRatio(1.);
 
 			if(dessin.loadVec(filename))
 			{
