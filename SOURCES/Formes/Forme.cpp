@@ -79,6 +79,13 @@ RGB_t Forme::getRGB(void) const
         rgb_buff.g = 85;
         rgb_buff.b = 2;
     }
+
+    else if((couleur == "CYAN") || (couleur == "BROWN"))
+    {
+        rgb_buff.r = 25;
+        rgb_buff.g = 209;
+        rgb_buff.b = 250;
+    }
     else if((couleur == "BLANC") || (couleur == "WHITE"))
     {
         rgb_buff.r = 255;
