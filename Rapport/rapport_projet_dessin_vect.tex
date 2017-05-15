@@ -97,19 +97,24 @@ DURAND Clovis \\ MAGNAN Camille\hfill{12 Mai 2017}
 
 % Debut doc
 
-\section{Introducion}
+\section{Introduction}
 
-L'objectif de ce projet est de mettre en œuvre les notions de base de la programmation orientée objets appliquées au langage C++ appréhendées durant l’enseignement de de PG208. Pour ce faire nous avons décidé de nous lancer dans le second sujet : \textbf{Dessin vectoriel}.
+L'objectif de ce projet est de mettre en œuvre les notions de base de la programmation orientée objets appliquées au langage C++ que l'on a appréhendées durant l’enseignement de PG208. Pour ce faire nous avons décidé de nous lancer dans le second sujet de projet: \textbf{Dessin vectoriel}. L'objectif est de générer une image Bitmap en fonction d'un fichier de description vectoriel de formes. L'enjeu de ce sujet est de comprendre l’intérêt de l'utilisation de classes et d'apprendre à faire interagir les différentes classes entre elles. \\
+
+Cette application est appelé \texttt{dessin\_vect}
 
 \subsection{Gestion du cahier des charges}
-Nous avons donc tenté de réaliser une application permettant de suivre au mieux le cahier des charges mis à notre disposition. En effet, nous avons développé une application permettant de générer des images à l’aide d’une description vectorielle de ces images. Ces images seront créées à partir de la descriptions de plusieurs formes géométriques. Nous avons donc programmé le dessin de 10 formes différentes afin d'avoir un large panel de possibilités graphiques : la ligne, le triangle (vide et plein), le point, le cercle (vide et plein), le rectangle (vide et plein) et enfin le carré (vide et plein également). 
 
-Voici donc le diagramme de cas d'utilisation qui représente le mode d'opération du point de vue du client :
+Nous avons donc tenté de réaliser une application permettant de suivre au mieux le cahier des charges qui nous a été soumis. En effet, nous avons développé un programme permettant de générer des images à l’aide d’une description vectorielle de ces images. Ces images seront créées à partir de la descriptions de plusieurs formes géométriques. Nous avons donc programmé le dessin de 10 formes différentes afin d'avoir un large panel de possibilités graphiques : la ligne, le triangle vide, le point, le cercle (vide et plein), le rectangle (vide et plein) et enfin le carré (vide et plein). 
+
+Le cahier des charges stipule que nous devons gérer un facteur d'échelle qui modifie la résolution de notre image de sortie. Un facteur de transparence doit aussi être intégré lorsqu'on dessine une forme. 
+
+Voici le diagramme de cas d'utilisation qui représente le mode d'opération du point de vue du client : 
 
 \begin{figure}[!htbp]
     \begin{center}
         \includegraphics[width=13cm]{Photo1.png}
-        \caption{diagramme cas d'utilisation}
+        \caption[Diagramme des cas d'utilisation]{Diagramme de cas d'utilisation de notre programme \texttt{dessin\_vect}}
     \centering
     \end{center}
 \end{figure}
@@ -117,10 +122,8 @@ Voici donc le diagramme de cas d'utilisation qui représente le mode d'opératio
 \clearpage
 
 \subsection{Diagramme UML}
-Le langage UML est un langage de modélisation graphique à base de pictogrammes conçu pour fournir une méthode normalisée pour visualiser la conception d'un système. Nous avons donc utilisé ce langage afin de nous de nous permettre de suivre un cheminement clair et détaillé de notre projet :
 
-\
-\
+Le langage UML est un langage de modélisation graphique à base de pictogrammes conçu pour fournir une méthode simple pour visualiser la conception d'un système. Nous avons donc utilisé ce langage afin de nous de nous permettre de suivre un cheminement clair et détaillé de notre projet. Ce diagramme permet aussi de comprendre comment les différentes classes ont été construites les unes par rapport aux autres, comme les rapports d'héritage. \\
 
 \begin{figure}[!htbp]
     \begin{center}
@@ -132,31 +135,29 @@ Le langage UML est un langage de modélisation graphique à base de pictogrammes
 
 \section{Les classes principales}
 
-Grâce au diagramme précédent, nous avons pu commencer le codage de notre projet par les classes principales. En effet certaines des classes à programmer sont plus importantes que les autres : nous avons fait le choix de créer une classe Coordonnées (non indispensable mais qui nous a permis de nous approprier la notion de .... dès le début) qui rassemble les coordonnées x et y de chaque forme. La classe forme contient tous les attributs communs aux futures classes des différentes formes. Enfin, la classe ligne est à la base de beaucoup de formes, la méthode drawLigne() est utilisée dans toutes les formes (mis à part le cercle).
+Grâce au diagramme UML vu précédemment, nous avons pu commencer à écrire le code de notre projet par les classes principales. En effet certaines des classes à programmer sont plus importantes que les autres. Nous avons fait le choix de créer une classe de coordonnées Coord (non indispensable mais qui nous a permis de nous approprier la notion de position d'un objet dans l'image dès le début) qui rassemble les coordonnées x et y de chaque forme. \\
 
-PARLER DU DESSIN
+Nous avons commencé par concevoir la classe forme contient tous les attributs communs aux futures classes des différentes formes. 
 
-\subsection{Classe Coordonnées \texttt{Coord1}}
+Ensuite, nous avons écrit le reste des classes de formes, en commençant par la classe Ligne. Celle-ci est à la base de beaucoup de formes. Par exemple, la méthode \texttt{drawLigne()} est utilisée dans toutes les formes (mis à part la classe Cercle et la classe Cercle\_p).
 
-La classe \texttt{Coord1} est une classe pratique, celle ci ne génère pas une méthode de dessin, elle permet simplement de généraliser les 2 coordonnées d'un point en un seul attributs.
+Enfin une classe Dessin permet de réunir toutes les formes en un seul objet, de définir les bornes de l'image, et de fournir les informations au dessin de l'image. 
 
-\clearpage
+\subsection{Classe de coordonnées Coord}
 
-\subsection{Classe Forme \texttt{Forme}}
+La classe \texttt{Coord} est une classe pratique. Celle-ci ne génère pas une forme, mais permet simplement de généraliser les 2 coordonnées d'un point en un seul objet. Cet objet servira d'attribut pour la classe Forme, ainsi que pour d'autres formes. 
 
-La classe mère \texttt{forme} regroupe l'ensemble des attributs communs à toutes les classes de formes :
+\subsection{Classe forme \texttt{Forme}}
 
-\
-\
+La classe mère Forme regroupe l'ensemble des attributs communs à toutes les classes de formes :
+
+\\
 
 \begin{itemize}
-    \item Les coordonnées (x,y) \texttt{Coord const c1}
-    \item La couleur \texttt{string const c}
-    \item La transparence \texttt{string const c}
-\end{itemize} 
-
-\
-\
+    \item Coord m\_c1 : Cette coordonnée définit la position dans l'image de l'objet. Ce point sert de base pour construire le reste de la forme. 
+    \item string m\_couleur : La couleur de l'objet. Tous les objets à dessiner doivent avoir une couleur définie, de manière à écrire cette couleur sur un pixel de l'image. Pour ce faire un format RGB est utilisé (0 à 255 pour chacune des trois couleur primordiales). 
+    \item unsigned int m\_transparence : Ce facteur permet de définir le niveau de transparence de la forme sur le dessin. 
+\end{itemize}
 
 Elle regroupe également les méthodes utilisées dans les différentes formes, c'est à dire la méthode générant la couleur des pixels en fonction des valeurs de R, G et B. De cette façon il nous est possible de récupérer la valeur de R, G et B indépendamment afin de déterminer la couleur de notre pixel. Nous avons rajouté une fonction \texttt{DrawPixel} dans la classe CImage qui nous permet de dessiner chaque pixel grâce à un simple appel à cette fonction. Cette classe nous permet également de déterminer le réglage de couleur du pixel en fonction du niveau de transparence retenu grâce à la formule suivante : 
 
