@@ -69,7 +69,7 @@ private:
 
 	// Fonctions privées diverses
 	Forme *loadForme(string ligne);
-	void bubbleSort(vector<unsigned int>& a);
+	void bubbleSort(vector<unsigned int> &a);
 };
 
 #endif // DESSIN_H

@@ -17,7 +17,7 @@ Dessin::Dessin()
 Dessin::~Dessin()
 {
 	// Destructeur
-	// Parcourir tout les elements du vecteur et free. delete
+	// Parcourir tout les elements du vecteur et free les allocations faites avec "new" : "delete"
 	for(unsigned int i = 0; i < m_formes.size(); i++)
 		delete m_formes[i];
 	m_formes.clear();
@@ -489,7 +489,7 @@ Forme *Dessin::loadForme(string ligne)
 	}
 }
 
-void Dessin::bubbleSort(vector<unsigned int>& a)
+void Dessin::bubbleSort(vector<unsigned int> &a)
 {
 	// Maximum à l'indice le plus fort
 	// Minimum à l'indice le plus faible
