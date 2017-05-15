@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.12.16)  15 MAY 2017 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.12.16)  15 MAY 2017 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1723,13 +1723,13 @@ quadri.png>] (./rapport_projet_dessin_vect.toc
 LaTeX Font Info:    Try loading font information for U+stmry on input line 3.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/stmaryrd/Ustmry.fd)
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 6.
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 22.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 10.
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 24.
 )
 \tf@toc=\write3
 \openout3 = `rapport_projet_dessin_vect.toc'.
@@ -1744,82 +1744,125 @@ Underfull \hbox (badness 10000) in paragraph at lines 102--103
 
  []
 
-<Photo1.png, id=18, 527.9725pt x 580.1675pt>
+<Photo1.png, id=18, 612.2875pt x 413.545pt>
 File: Photo1.png Graphic file (type png)
  <use Photo1.png>
-Package pdftex.def Info: Photo1.png used on input line 116.
-(pdftex.def)             Requested size: 369.88582pt x 406.45087pt.
+Package pdftex.def Info: Photo1.png used on input line 120.
+(pdftex.def)             Requested size: 455.24408pt x 307.47615pt.
  [3] [4 <./Photo1.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 126--127
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
 
  []
 
-<Photo2.png, id=28, 793.96625pt x 409.53pt>
-File: Photo2.png Graphic file (type png)
- <use Photo2.png>
-Package pdftex.def Info: Photo2.png used on input line 130.
-(pdftex.def)             Requested size: 569.05511pt x 293.5241pt.
+<UML1.jpg, id=28, 1284.8pt x 446.16687pt>
+File: UML1.jpg Graphic file (type jpg)
+ <use UML1.jpg>
+Package pdftex.def Info: UML1.jpg used on input line 134.
+(pdftex.def)             Requested size: 569.05511pt x 197.61435pt.
 
-Overfull \hbox (68.57112pt too wide) in paragraph at lines 130--131
+Overfull \hbox (68.57112pt too wide) in paragraph at lines 134--135
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--139
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+<UML2.jpg, id=29, 1969.3575pt x 442.65375pt>
+File: UML2.jpg Graphic file (type jpg)
+ <use UML2.jpg>
+Package pdftex.def Info: UML2.jpg used on input line 151.
+(pdftex.def)             Requested size: 341.43306pt x 76.74284pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--160
 
  []
 
 [5
 
- <./Photo2.png>]
-LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 152.
- [6] <Formule.png, id=37, 629.35126pt x 100.375pt>
-File: Formule.png Graphic file (type png)
+ <./UML1.jpg> <./UML2.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 178--179
 
-<use Formule.png>
-Package pdftex.def Info: Formule.png used on input line 178.
-(pdftex.def)             Requested size: 341.43306pt x 54.45439pt.
- [7
+ []
 
- <./Formule.png>]
-<Photo3.png, id=43, 471.7625pt x 229.85875pt>
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 195--196
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 197--198
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 213--214
+
+ []
+
+<Photo3.png, id=45, 471.7625pt x 229.85875pt>
 File: Photo3.png Graphic file (type png)
  <use Photo3.png>
-Package pdftex.def Info: Photo3.png used on input line 199.
-(pdftex.def)             Requested size: 369.88582pt x 180.22205pt.
+Package pdftex.def Info: Photo3.png used on input line 217.
+(pdftex.def)             Requested size: 227.62204pt x 110.90614pt.
  [8
 
  <./Photo3.png>]
+LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 262.
+
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
+
+ []
+
 LaTeX Font Info:    Font shape `T1/cmtt/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 206.
- [9
+(Font)              Font shape `T1/cmtt/m/n' tried instead on input line 272.
+[9] [10] <plage.jpg, id=58, 605.26125pt x 682.55pt>
+File: plage.jpg Graphic file (type jpg)
+ <use plage.jpg>
+Package pdftex.def Info: plage.jpg used on input line 306.
+(pdftex.def)             Requested size: 227.62204pt x 256.68466pt.
+
+<licorne.jpg, id=59, 604.2575pt x 677.53125pt>
+File: licorne.jpg Graphic file (type jpg)
+ <use licorne.jpg>
+Package pdftex.def Info: licorne.jpg used on input line 313.
+(pdftex.def)             Requested size: 227.62204pt x 255.22113pt.
+ [11
+
+ <./plage.jpg> <./licorne.jpg>] [12
 
 ] (./rapport_projet_dessin_vect.aux) ) 
 Here is how much of TeX's memory you used:
- 14298 strings out of 493027
- 241417 string characters out of 6134068
- 298952 words of memory out of 5000000
- 17684 multiletter control sequences out of 15000+600000
- 15956 words of font info for 42 fonts, out of 8000000 for 9000
+ 14311 strings out of 493027
+ 241560 string characters out of 6134068
+ 300952 words of memory out of 5000000
+ 17693 multiletter control sequences out of 15000+600000
+ 16657 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,6n,42p,10434b,439s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts
 /enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
-/public/cm-super/sfbx1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/cm-super/sfcc1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/cm-super/sfrm1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
-c/cm-super/sfrm1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-cm-super/sftt1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm
--super/sftt1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
-uper/sftt1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-sup
-er/sfxc1728.pfb>
-Output written on rapport_projet_dessin_vect.pdf (9 pages, 494586 bytes).
+ype1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/cm-super/sfbi1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/cm-super/sfbx1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/cm-super/sfbx1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+cm-super/sfbx1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm
+-super/sfcc1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-s
+uper/sfrm1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-sup
+er/sfrm1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super
+/sftt1095.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/s
+ftt1200.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sft
+t1440.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sfxc1
+728.pfb>
+Output written on rapport_projet_dessin_vect.pdf (12 pages, 943884 bytes).
 PDF statistics:
- 86 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 117 PDF objects out of 1000 (max. 8388607)
+ 75 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

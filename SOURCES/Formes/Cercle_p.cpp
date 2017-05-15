@@ -11,20 +11,12 @@
 //#define DEBUG
 
 // Con/Destructeurs
-Cercle_p::Cercle_p()
-{
-    setRayon(1); // Valeur par defaut a définir, 1 pour le moment
-}
-
 Cercle_p::Cercle_p(Coord const c, 
     unsigned int const rayon, 
     std::string const couleur, 
-    unsigned int const transparence)
+    unsigned int const transparence): Cercle(c, rayon, couleur, transparence)
 {
-	setCoord1(c);
-    setRayon(rayon);
-    setCouleur(couleur);
-    setTransparence(transparence);
+
 }
 
 // Afficheurs

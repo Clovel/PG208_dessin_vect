@@ -11,7 +11,6 @@ class Cercle : public Forme
 public :
 
 	// Constructeur
-	Cercle();
 	Cercle(Coord const c, 
 		unsigned int const rayon, 
 		std::string const couleur, 

@@ -4,11 +4,6 @@
 #include "../../HEADERS/Formes/Cercle.h"
 
 // Con/Destructeurs
-Cercle::Cercle(): m_rayon(1)
-{
-    // Valeur par defaut a définir, 1 pour le moment
-}
-
 Cercle::Cercle(Coord const c, 
     unsigned int const rayon, 
     std::string const couleur, 

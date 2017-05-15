@@ -16,7 +16,6 @@ class Cercle_p : public Cercle
 {
 public:
 	// Con/Destructeurs
-	Cercle_p();
 	Cercle_p(Coord const c, 
 		unsigned int const rayon, 
     	std::string const couleur, 

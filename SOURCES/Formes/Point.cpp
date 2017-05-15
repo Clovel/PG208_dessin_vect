@@ -13,11 +13,9 @@ using namespace std;
 // Con/Destructeurs
 Point::Point(Coord const c, 
 	string const couleur, 
-	unsigned int const transparence)
+	unsigned int const transparence): Forme(c, couleur, transparence)
 {
-	setCoord1(c);
-	setTransparence(transparence);
-	setCouleur(couleur);
+	//
 }
 
 // Afficheurs
