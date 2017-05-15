@@ -37,6 +37,16 @@ vector<Forme *> Dessin::getFormes(void) const
 	return m_formes;
 }
 
+vector<unsigned int> Dessin::getH(void) const
+{
+	return m_h;
+}
+
+vector<unsigned int> Dessin::getL(void) const
+{
+	return m_l;
+}
+
 // Mutateurs
 
 void Dessin::setForme(Forme *f, unsigned int const &index)
@@ -56,8 +66,17 @@ void Dessin::addForme(Forme *f)
 	m_formes.push_back(f);
 }
 
-// Fonction Load depuis un fichier .vec
+void Dessin::addH(unsigned int const &a)
+{
+	m_h.push_back(a);
+}
 
+void Dessin::addL(unsigned int const &a)
+{
+	m_l.push_back(a);
+}
+
+// Fonction Load depuis un fichier .vec
 bool Dessin::loadVec(string const &filename)
 {
 	ifstream file(filename);
@@ -90,6 +109,28 @@ bool Dessin::loadVec(string const &filename)
 				addForme(tempshape);
 			}
 		}
+
+		// On trie les vecteurs d'extremes pour en recuperer les maximum et minimum. 
+		#ifdef DEBUG
+			cout << "[DEBUG] : Print du contenu des vecteur avant le tri à bulles\n";
+			cout << "[DEBUG] : m_l : ";
+			printVector(m_l); 
+			cout << "[DEBUG] : m_h : ";
+			printVector(m_h); 
+		#endif // DEBUG
+
+		bubbleSort(m_l);
+		bubbleSort(m_h);
+
+		#ifdef DEBUG
+			cout << "[DEBUG] : Print du contenu des vecteur après le tri à bulles\n";
+			cout << "[DEBUG] : m_l : ";
+			printVector(m_l); 
+			cout << "[DEBUG] : m_h : ";
+			printVector(m_h); 
+		#endif // DEBUG
+
+
 		return 1;
 	}
 	else
@@ -104,19 +145,25 @@ void Dessin::drawAll(CImage *img) const
 	{
 		#ifdef DEBUG
 			cout << "[DEBUG] : # of the shape in file : " << i << endl;
-		#endif DEBUG
+		#endif // DEBUG
 		getFormeFromIdx(i)->draw(img);
 		#ifdef DEBUG
 			cout << "[DEBUG] : Just drew shape #" << i << endl;
-		#endif DEBUG
+		#endif // DEBUG
 	}
 	#ifdef DEBUG
 		cout << "[DEBUG] : Drew every shape in vector" << endl;
-	#endif DEBUG
+	#endif // DEBUG
+}
+
+void Dessin::printVector(vector<unsigned int> a) const
+{
+	for (unsigned int i = 0; i < a.size(); i++)
+		cout << a[i] << " ";
+	cout << endl;
 }
 
 // Fonctions privées diverses
-
 Forme *Dessin::loadForme(string ligne)
 {
 	vector<string> infos;
@@ -157,6 +204,12 @@ Forme *Dessin::loadForme(string ligne)
 		string colorstring = infos[4]; // couleur sous forme de string
 		unsigned int trsp  = (unsigned int)stoi(infos[5]);
 
+		// ajout au vecteur recadrage de l'image
+		addH(y + r);
+		addH(MAX(0, y - r));
+		addL(x + r);
+		addL(MAX(0, x - r));
+
 		Coord c1(x, y);
 
 		return new Cercle_p(c1, r, colorstring, trsp); // circp; //On retourne l'adresse de l'objet
@@ -185,6 +238,11 @@ Forme *Dessin::loadForme(string ligne)
 		string colorstring = infos[4]; // couleur sous forme de string
 		unsigned int trsp  = (unsigned int)stoi(infos[5]);
 
+		addH(y + r);
+		addH(MAX(0, y - r));
+		addL(x + r);
+		addL(MAX(0, x - r));
+
 		Coord c1(x, y);
 
 		return new Cercle(c1, r, colorstring, trsp); // circ; //On retourne l'adresse de l'objet
@@ -211,39 +269,18 @@ Forme *Dessin::loadForme(string ligne)
 		int x1 				= stoi(infos[3]);
 		int y1 				= stoi(infos[4]);
 		string colorstring 	= infos[5];
-		unsigned int trsp 	= (unsigned int)stoi(infos[6]);  
+		unsigned int trsp 	= (unsigned int)stoi(infos[6]);
+
+		addH(y0);
+		addH(y1);
+		addL(x0);
+		addL(x1);
 
 		Coord c1(x0, y0);
 		Coord c2(x1, y1);
 
 		return new Ligne(c1, c2, colorstring, trsp); // l;
 	}
-	/*else if(infos[0] == "POINT")
-	{
-		// La forme en question est un point
-		// Ex : POINT:100,100,BLEU,0;
-
-		#ifdef DEBUG
-			cout << "[DEBUG] : This shape is a pixel\n";
-		#endif //DEBUG
-
-		// On récupère le reste des infos
-		for(unsigned int i = 0; i < 4; i++)
-		{ // Recuperation des 3 int
-			int pos = ligne.find(","); // Curseur
-			infos.push_back(ligne.substr(0, pos)); 
-			ligne = ligne.substr(pos + 1, taille - pos - 1);
-		}
-
-		int x 				= stoi(infos[1]);
-		int y 				= stoi(infos[2]);
-		string colorstring 	= infos[3];
-		unsigned int trsp 	= (unsigned int)stoi(infos[4]);
-
-		Coord c1(x, y);
-
-		return new Point(c1, colorstring, trsp); // p;
-	}*/
 	else if(infos[0] == "RECTANGLE")
 	{
 		// La forme en question est un rectangle simple
@@ -267,6 +304,11 @@ Forme *Dessin::loadForme(string ligne)
 		int hauteur			= stoi(infos[4]);
 		string colorstring 	= infos[5];
 		unsigned int trsp 	= (unsigned int)stoi(infos[6]); 
+
+		addH(y);
+		addH(y + hauteur);
+		addL(x);
+		addL(x + longueur);
 
 		Coord c1(x, y);
 
@@ -297,6 +339,11 @@ Forme *Dessin::loadForme(string ligne)
 		string colorstring 	= infos[5];
 		unsigned int trsp 	= (unsigned int)stoi(infos[6]); 
 
+		addH(y);
+		addH(y + hauteur);
+		addL(x);
+		addL(x + longueur);
+
 		Coord c1(x, y);
 
 		return new Rectangle_p(c1, longueur, hauteur, colorstring, trsp); //rectp;
@@ -323,6 +370,11 @@ Forme *Dessin::loadForme(string ligne)
 		unsigned int cote	= (unsigned int)stoi(infos[3]);
 		string colorstring 	= infos[4];
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
+
+		addH(y);
+		addH(y + cote);
+		addL(x);
+		addL(x + cote);
 
 		Coord c1(x, y);
 
@@ -351,6 +403,11 @@ Forme *Dessin::loadForme(string ligne)
 		unsigned int cote	= (unsigned int)stoi(infos[3]);
 		string colorstring 	= infos[4];
 		unsigned int trsp 	= (unsigned int)stoi(infos[5]); 
+
+		addH(y);
+		addH(y + cote);
+		addL(x);
+		addL(x + cote);
 
 		Coord c1(x, y);
 
@@ -387,6 +444,11 @@ Forme *Dessin::loadForme(string ligne)
 		Ligne l(c1, c2, colorstring, trsp);
 		Coord c3(x2, y2);
 
+		addH(MAX(MAX(y0, y1), y2));
+		addH(MIN(MIN(y0, y1), y2));
+		addL(MAX(MAX(x0, x1), x2));
+		addL(MIN(MIN(x0, x1), x2));
+
 		return new Triangle(l, c3); // carrep;
 	}
 	else if((infos[0] == "POINT") ||
@@ -412,6 +474,9 @@ Forme *Dessin::loadForme(string ligne)
 		string colorstring 	= infos[3];
 		unsigned int trsp 	= (unsigned int)stoi(infos[4]); 
 
+		addH(y);
+		addL(x);
+
 		Coord c1(x, y);
 
 		return new Point(c1, colorstring, trsp); // carrep;
@@ -421,5 +486,29 @@ Forme *Dessin::loadForme(string ligne)
 		// Mauvaise entrée, on ne fait rien ?
 		// Ou commentaire avec # (ou autre caractère)
 		return NULL;
+	}
+}
+
+void Dessin::bubbleSort(vector<unsigned int>& a)
+{
+	// Maximum à l'indice le plus fort
+	// Minimum à l'indice le plus faible
+	bool swapp = 1;
+
+	while(swapp)
+	{
+		swapp = 0;
+
+		for (unsigned int i = 0; i < a.size() - 1; i++)
+		{
+			if (a[i] > a[i + 1])
+			{
+				a[i]    += a[i + 1];
+				a[i + 1] = a[i] - a[i + 1];
+				a[i]    -= a[i + 1];
+
+				swapp    = 1;
+			}
+		}
 	}
 }

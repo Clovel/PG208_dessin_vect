@@ -34,25 +34,6 @@ Cercle_p::Cercle_p(Coord const c,
 // Mutateurs
 
 // Draw
-/*
-void Cercle_p::draw(CImage *img) const
-{
-    float seg;
-
-    int x = getCoord1().getAbscisse();
-    int y = getCoord1().getOrdonnee();
-
-    for(int i = MAX(x - getRayon(), 0); i < MIN(x + getRayon() + 1, img->size()); i++)
-    {
-        for (int j = MAX(y - getRayon(), 0); j < MIN(y + getRayon() + 1, img->size()); j++)
-        {
-            seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
-
-            if (seg < getRayon())
-                img->drawPixel(i, j, getRGB().r, getRGB().g, getRGB().b);
-        }
-    }
-}*/
 
 void Cercle_p::draw(CImage *img) 
 {
@@ -78,6 +59,7 @@ void Cercle_p::draw(CImage *img)
 
 // Attributs/Variables membres
 
+// Méthodes privées diverses
 void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int const y) 
 {
     float seg;
@@ -89,12 +71,12 @@ void Cercle_p::drawCircles(CImage *img, unsigned int rayon, int const x, int con
 
     if(rayon != 0)
     {
-	    for(int i = MAX(x - rayon, 0); i < MIN(x + rayon + 1, img->size()); i++)
+	    for(int i = MAX(x - rayon, 0); i < x + rayon + 1; i++)
 	    {
 	    	/*#ifdef DEBUG 
 	    		cout << "DEBUG : First loop, i = " << i << endl;
 	    	#endif // DEBUG*/
-	        for (int j = MAX(y - rayon, 0); j < MIN(y + rayon + 1, img->size()); j++)
+	        for (int j = MAX(y - rayon, 0); j < y + rayon + 1; j++)
 	        {
 	        	seg = sqrt(pow(x - i, 2) + pow(y - j, 2));
 

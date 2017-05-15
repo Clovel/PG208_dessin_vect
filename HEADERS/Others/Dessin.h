@@ -40,22 +40,36 @@ public:
 	// Accesseurs
 	Forme *getFormeFromIdx(unsigned int const &index) const;
 	vector<Forme *> getFormes(void) const;
+	vector<unsigned int> getH(void) const;
+	vector<unsigned int> getL(void) const;
 
 	// Mutateurs
 	void setForme(Forme *f, unsigned int const &index);
 	void addForme(Forme *f);
+	void addH(unsigned int const &a);
+	void addL(unsigned int const &a);
 
 	// Fonction Load depuis un fichier .vec
 	bool loadVec(string const &filename);
 
 	// Fonctions publiques diverses
 	void drawAll(CImage *img) const;
+	void printVector(vector<unsigned int> a) const;
 
 private:
 	vector<Forme *> m_formes; // Va contenir toutes les formes
 
+	// Définition de la taille de l'image
+	// Pour la hauteur
+	vector<unsigned int> m_h;
+
+	// Pour la largeur
+	vector<unsigned int> m_l;
+
+
 	// Fonctions privées diverses
 	Forme *loadForme(string ligne);
+	void bubbleSort(vector<unsigned int>& a);
 };
 
 #endif // DESSIN_H

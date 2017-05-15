@@ -130,16 +130,6 @@ int main(int argc, char *argv[])
 		}
 		else // Un nom de fichier a ete precise.
 		{
-			cout << "[INFO]  : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
-			cout << "[INFO]  : Number of arguments = " << argc << endl;
-
-			cout << "[INFO]  : CBitmap object creation" << endl;
-			CBitmap *image = new CBitmap();
-			string filename2 = "Sortie_vec.bmp";
-
-			cout << "[INFO]  : CImage pointer extraction" << endl;
-			CImage   *img = new CImage(HEIGHT, WIDTH);
-
 			// On déclare un dessin
 			cout << "[INFO]  : Drawing creation" << endl;
 			Dessin dessin; // Construit le dessin
@@ -148,6 +138,20 @@ int main(int argc, char *argv[])
 
 			if(dessin.loadVec(filename))
 			{
+				cout << "[INFO]  : P_Bitmap exection start (" << __DATE__ << " - " << __TIME__ << ")" << endl;
+				cout << "[INFO]  : Number of arguments = " << argc << endl;
+
+				cout << "[INFO]  : CBitmap object creation" << endl;
+				CBitmap *image = new CBitmap();
+				string filename2 = "Sortie_vec.bmp";
+
+				cout << "[INFO]  : CImage pointer extraction" << endl;
+
+				unsigned int n      = dessin.getH().size();
+				unsigned int height = dessin.getH()[n - 1] + 4 - dessin.getH()[n - 1] % 4;
+				unsigned int width  = dessin.getL()[n - 1] + 4 - dessin.getL()[n - 1] % 4;
+				CImage   *img = new CImage(height, width);
+
 				cout << "[INFO]  : " << filename << " loaded. " << endl;
 				cout << "[INFO]  : Drawing all info given by [" << filename << "]" << endl;
 				dessin.drawAll(img);
